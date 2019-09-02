@@ -1,0 +1,42 @@
+.main-image {
+    max-width: 100%;
+    margin: auto;
+    display: block;
+}
+
+.login-form-wrapper {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.login-button, .mdl-textfield {
+    width: calc(100% - 40px) !important;
+    margin-left: 20px;
+}
+
+.cancel-button {
+    position: absolute !important;
+    bottom: 20px;
+    left: 20px;
+    width: 40%;
+}
+
+.continue-button {
+    position: absolute !important;
+    bottom: 20px;
+    right: 20px;
+    width: 40%;
+}
+
+#p1 {
+    width: calc(100% - 40px);
+    margin-left: 20px;
+    position: absolute;
+    bottom: 7px;
+}
+
+.title {
+    margin-top: 5px;
+    margin-left: 10px;
+}

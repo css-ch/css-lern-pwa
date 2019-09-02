@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PWABay - Registration</title>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="stylesheet" href="../src/css/registration.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.indigo-pink.min.css">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="PWABay">
+    <link rel="apple-touch-icon" href="../src/img/icons/icon-512.png" sizes="512x512">
+    <link rel="apple-touch-icon" href="../src/img/icons/icon-192.png" sizes="192x192">
+    <meta name="msapplication-TileImage" content="/src/img/icons/swing.png">
+    <meta name="msapplication-TileColor" content="#81b8f7">
+    <meta name="theme-color" content="#30cde6">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="../src/img/icons/icon-16.png">
+</head>
+<body>
+    <img src="/src/img/background.jpg"
+         class="main-image">
+
+    <p class="title">Persönliche Daten</p>
+
+    <div class="login-form-wrapper">
+        <form>
+            <div class="input-section mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input login-inputs" type="text" id="name">
+                <label class="mdl-textfield__label" for="name" name="name">Voller Name</label>
+            </div>
+            <br>
+            <div class="input-section mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input login-inputs" type="text" id="address">
+                <label class="mdl-textfield__label" for="address" name="address">Adresse</label>
+            </div>
+            <br>
+            <div class="input-section mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input login-inputs" type="text" id="city">
+                <label class="mdl-textfield__label" for="city" name="city">Stadt</label>
+            </div>
+            <br>
+            <div class="input-section mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input login-inputs" type="text" id="plz">
+                <label class="mdl-textfield__label" for="plz" name="plz">PLZ</label>
+            </div>
+        </form>
+    </div>
+
+    <div id="p1" class="mdl-progress mdl-js-progress"></div>
+    <script>
+        document.querySelector('#p1').addEventListener('mdl-componentupgraded', function() {
+            this.MaterialProgress.setProgress(100);
+        });
+    </script>
+
+    <button class="mdl-button mdl-js-button mdl-button--raised cancel-button" onclick="window.location = '/registration-user'">
+        Zurück
+    </button>
+
+    <button class="mdl-button mdl-js-button mdl-button--raised continue-button" onclick="window.location = '/successful'">
+        Abschliessen
+    </button>
+
+    <script defer src="../src/js/material.min.js"></script>
+</body>
+</html>
