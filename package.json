@@ -15,7 +15,7 @@
   "author": "David Gataric",
   "license": "ISC",
   "devDependencies": {
-    "http-server": "^0.9.0"
+    "http-server": "^0.11.1"
   },
   "dependencies": {
     "getmdl-select": "^2.0.1"
