@@ -8,9 +8,9 @@
 }
 
 #demo-toast-example {
-    width: calc(100% - 40px);
-    margin-left: 20px;
-}
+     width: calc(100% - 40px);
+     margin-left: 20px;
+ }
 
 .mdl-snackbar--active {
     margin-bottom: 60px;
