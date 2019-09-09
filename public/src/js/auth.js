@@ -8,7 +8,7 @@ loginForm.addEventListener('submit', (e) => {
     const password = loginForm['password'].value;
 
     auth.signInWithEmailAndPassword(email, password).then(cred => {
-        window.location = '/home';
+        window.location = '/successful';
     }).catch(ex => {
         var data = {message: ex.message};
         dataInvalid.MaterialSnackbar.showSnackbar(data);
