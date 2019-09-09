@@ -20,3 +20,12 @@
     left: 20px;
     width: 40%;
 }
+
+.mdl-snackbar--active {
+    margin-bottom: 60px;
+}
+
+#data-invalid-snackbar {
+    width: calc(100% - 40px);
+    margin-left: 20px;
+}

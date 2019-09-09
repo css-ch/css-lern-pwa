@@ -44,8 +44,8 @@
 
             <div class="change-form-wrapper">
                 <div class="input-section mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input login-inputs" type="text" id="password1">
-                    <label class="mdl-textfield__label" for="password1" name="password">Passwort</label>
+                    <input class="mdl-textfield__input login-inputs" type="password" id="password1">
+                    <label class="mdl-textfield__label" for="password1" name="password">Neues Passwort</label>
                 </div>
                 <br>
                 <div class="input-section mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -57,7 +57,7 @@
                 Abbrechen
             </button>
 
-            <button class="mdl-button mdl-js-button mdl-button--raised save-button" onclick="window.location = '/settings'">
+            <button class="mdl-button mdl-js-button mdl-button--raised save-button" id="update-password">
                 Speichern
             </button>
 
@@ -91,6 +91,17 @@
     </main>
 </div>
 
+<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-firestore.js"></script>
+
+<div id="data-invalid-snackbar" class="mdl-js-snackbar mdl-snackbar">
+    <div class="mdl-snackbar__text"></div>
+    <button class="mdl-snackbar__action" type="button"></button>
+</div>
+
 <script defer src="../src/js/material.min.js"></script>
+<script src="../src/js/firebase.js"></script>
+<script src="../src/js/change-password.js"></script>
 </body>
 </html>
