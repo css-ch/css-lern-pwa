@@ -1,0 +1,17 @@
+<img src="../../assets/img/background.jpg" alt="background" class="main-image">
+
+<div class="login-form-wrapper">
+  <form class="login-form">
+    <mat-form-field class="login-input">
+      <input matInput placeholder="Email" value="test@css.ch" [(ngModel)]="user.email" name="email">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="login-input">
+      <input matInput placeholder="Password" type="password" value="12345678a" [(ngModel)]="user.password" name="password">
+    </mat-form-field>
+    <br>
+    <button mat-stroked-button color="primary" class="login-button" (click)="login()">Einloggen</button>
+  </form>
+</div>
+
+<a href="/registration" class="registration-link">Hast du keinen Account?</a>

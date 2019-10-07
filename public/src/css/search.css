@@ -1,8 +1,0 @@
-.produktsuche-wrapper, .allgemeine-suche-wrapper {
-    width: calc(100% - 40px);
-    margin-left: 20px;
-}
-
-.produktsuche-button, .mdl-textfield {
-    width: 100% !important;
-}

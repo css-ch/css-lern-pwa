@@ -1,0 +1,46 @@
+<mat-horizontal-stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Userdaten</ng-template>
+      <mat-form-field class="registration-input">
+        <input matInput placeholder="Email" formControlName="firstCtrl" required [(ngModel)]="userdata.email">
+      </mat-form-field>
+      <mat-form-field class="registration-input">
+        <input matInput placeholder="Username" formControlName="firstCtrl" required [(ngModel)]="userdata.displayname">
+      </mat-form-field>
+      <mat-form-field class="registration-input">
+        <input matInput placeholder="Passwort" formControlName="firstCtrl" required type="password" [(ngModel)]="userdata.password">
+      </mat-form-field>
+      <mat-form-field class="registration-input">
+        <input matInput placeholder="Passwort wiederholen" formControlName="firstCtrl" required type="password">
+      </mat-form-field>
+      <div>
+        <button mat-button class="next-button" [routerLink]="['/login']">Abbrechen</button>
+        <button mat-button matStepperNext class="next-button">Weiter</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Persönliche Daten</ng-template>
+      <p>Damit wir dir deine Bestellung liefern können, musst du deine Persönlichen Daten geben. Diese Daten kannst du später auch bearbeiten.</p>
+      <mat-form-field class="registration-input">
+        <input matInput placeholder="Voller Name" formControlName="secondCtrl" required [(ngModel)]="personalData.fullname">
+      </mat-form-field>
+      <mat-form-field class="registration-input">
+        <input matInput placeholder="Adresse" formControlName="secondCtrl" required [(ngModel)]="personalData.address">
+      </mat-form-field>
+      <mat-form-field class="registration-input">
+        <input matInput placeholder="PLZ" formControlName="secondCtrl" required [(ngModel)]="personalData.postcode">
+      </mat-form-field>
+      <mat-form-field class="registration-input">
+        <input matInput placeholder="Stadt" formControlName="secondCtrl" required [(ngModel)]="personalData.city">
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Zurück</button>
+        <button mat-button (click)="registerUser()">Fertig</button>
+      </div>
+    </form>
+  </mat-step>
+</mat-horizontal-stepper>
+

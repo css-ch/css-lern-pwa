@@ -1,0 +1,54 @@
+<app-toolbar></app-toolbar>
+
+<p class="title">Produktsuche</p>
+<div class="produktsuche-wrapper">
+  <mat-form-field class="search-input">
+    <input matInput placeholder="Produkt" name="product">
+  </mat-form-field>
+  <button mat-raised-button color="primary" class="search-button">Suchen</button>
+</div>
+
+<p class="title">Allgemeine Suche</p>
+<div class="allgemeine-suche-wrapper">
+  <mat-form-field class="search-input">
+    <mat-label>Produktart</mat-label>
+    <mat-select>
+      <mat-option value="Hosen">
+        Hosen
+      </mat-option>
+      <mat-option value="T-Shirts">
+        T-Shirts
+      </mat-option>
+      <mat-option value="Socken">
+        Socken
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="search-input">
+    <mat-label>Marke</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let brand of brandsList | async" [value]="brand.name">
+        {{brand.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="search-input">
+    <mat-label>Farbe</mat-label>
+    <mat-select>
+      <mat-option value="Gelb">
+        Gelb
+      </mat-option>
+      <mat-option value="Schwarz">
+        Schwarz
+      </mat-option>
+      <mat-option value="Weiss">
+        Weiss
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" class="search-button">Suchen</button>
+</div>
+<app-nav></app-nav>

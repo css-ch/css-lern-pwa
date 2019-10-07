@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/PWABay-Ang",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

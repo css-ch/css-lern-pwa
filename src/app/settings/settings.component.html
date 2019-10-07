@@ -1,0 +1,22 @@
+<app-toolbar></app-toolbar>
+
+<p class="title">Tester</p>
+<div class="settings-wrapper">
+  <mat-list role="list">
+    <mat-list-item role="listitem">
+      <p>Push-Nachrichten</p>
+      <mat-slide-toggle class="push-toggle"></mat-slide-toggle>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item role="listitem" (click)="changeUsername()">
+      <p>Usernamen ändern</p>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item role="listitem" (click)="changePassword()">
+      <p>Passwort ändern</p>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-list>
+</div>
+
+<app-nav></app-nav>

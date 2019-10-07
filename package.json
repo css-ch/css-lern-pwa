@@ -1,23 +1,58 @@
 {
-  "name": "pwa-bay",
-  "version": "1.0.0",
-  "description": "Ebay but PWA",
-  "main": "index.js",
+  "name": "pwabay-ang",
+  "version": "0.0.0",
   "scripts": {
-    "start": "http-server -c-1"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "prod-build-http": "http-server -c-1 dist/PWABay-Ang"
   },
-  "keywords": [
-    "pwa",
-    "progressive",
-    "web",
-    "app"
-  ],
-  "author": "David Gataric",
-  "license": "ISC",
-  "devDependencies": {
-    "http-server": "^0.11.1"
-  },
+  "private": true,
   "dependencies": {
-    "getmdl-select": "^2.0.1"
+    "@angular/animations": "~8.2.8",
+    "@angular/cdk": "~8.2.2",
+    "@angular/common": "~8.2.8",
+    "@angular/compiler": "~8.2.8",
+    "@angular/core": "~8.2.8",
+    "@angular/fire": "^5.2.1",
+    "@angular/forms": "~8.2.8",
+    "@angular/material": "^8.2.2",
+    "@angular/platform-browser": "~8.2.8",
+    "@angular/platform-browser-dynamic": "~8.2.8",
+    "@angular/pwa": "^0.803.6",
+    "@angular/router": "~8.2.8",
+    "@angular/service-worker": "~8.2.8",
+    "bcrypt": "^3.0.6",
+    "core-js": "^2.5.4",
+    "firebase": "^7.0.0",
+    "hammerjs": "^2.0.8",
+    "password-hash": "^1.2.2",
+    "rxjs": "~6.5.3",
+    "tslib": "^1.10.0",
+    "zone.js": "~0.9.1"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.803.6",
+    "@angular/cli": "~8.3.6",
+    "@angular/compiler-cli": "~8.2.8",
+    "@angular/language-service": "~8.2.8",
+    "@types/jasmine": "~2.8.8",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
+    "codelyzer": "^5.0.1",
+    "jasmine-core": "~2.99.1",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~3.0.0",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-coverage-istanbul-reporter": "~2.0.1",
+    "karma-jasmine": "~1.1.2",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "protractor": "~5.4.0",
+    "ts-node": "~7.0.0",
+    "tslint": "~5.11.0",
+    "typescript": "~3.5.3"
   }
 }
