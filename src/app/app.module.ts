@@ -24,6 +24,8 @@ import {AuthGuard} from './_core/auth.guard';
 import { NavComponent } from './components/nav/nav.component';
 import {ToolbarComponent} from './components/toolbar/toolbar.component';
 import {LogoutSpinnerComponent} from './components/logout-spinner/logout-spinner.component';
+import { PersonalDataComponent } from './personal-data/personal-data.component';
+import { BackNavComponent } from './components/back-nav/back-nav.component';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyBYlCWINMXHIIpZ94hq4nSAA9WQoFLhXlU',
@@ -49,6 +51,8 @@ export const firebaseConfig = {
     NavComponent,
     ToolbarComponent,
     LogoutSpinnerComponent,
+    PersonalDataComponent,
+    BackNavComponent,
   ],
   imports: [
     BrowserModule,

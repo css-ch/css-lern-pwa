@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <div>
+      <button mat-button class="back-button" (click)="goBack()">
+        <mat-icon class="back-icon">arrow_back_ios</mat-icon> Zurück
+      </button>
+    </div>
+    <h1 class="header-title">
+      <mat-icon fxLayoutAlign="center" *ngIf="pageIcon">{{pageIcon}}</mat-icon>
+      {{pageTitle}}
+    </h1>
+  </mat-toolbar-row>
+</mat-toolbar>

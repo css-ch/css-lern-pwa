@@ -20,4 +20,8 @@ export class SettingsComponent implements OnInit {
   public changePassword() {
     this.router.navigateByUrl('/changePassword');
   }
+
+  public changePersonalData() {
+    this.router.navigateByUrl('/personal-data');
+  }
 }
