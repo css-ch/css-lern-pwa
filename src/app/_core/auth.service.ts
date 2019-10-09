@@ -53,6 +53,10 @@ export class AuthService {
 
   changePassword(email: string) {
     this.afAuth.auth.sendPasswordResetEmail(email);
+    this.toastService.createToastMessage('Dir wurde eine Email zum Passwort reset geschickt');
   }
 
+  useDeviceLang() {
+    this.afAuth.auth.useDeviceLanguage();
+  }
 }
