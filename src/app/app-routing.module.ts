@@ -10,6 +10,7 @@ import {FavoritesComponent} from './favorites/favorites.component';
 import {SettingsComponent} from './settings/settings.component';
 import {AuthGuard} from './_core/auth.guard';
 import {PersonalDataComponent} from "./personal-data/personal-data.component";
+import {SearchResultsComponent} from "./search-results/search-results.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'favorites', component: FavoritesComponent, canActivate: [AuthGuard]},
   { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard]},
   { path: 'personal-data', component: PersonalDataComponent, canActivate: [AuthGuard]},
+  { path: 'search-results', component: SearchResultsComponent, canActivate: [AuthGuard]},
 
 ];
 

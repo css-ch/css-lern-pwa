@@ -26,6 +26,7 @@ import {ToolbarComponent} from './components/toolbar/toolbar.component';
 import {LogoutSpinnerComponent} from './components/logout-spinner/logout-spinner.component';
 import { PersonalDataComponent } from './personal-data/personal-data.component';
 import { BackNavComponent } from './components/back-nav/back-nav.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyBYlCWINMXHIIpZ94hq4nSAA9WQoFLhXlU',
@@ -53,6 +54,7 @@ export const firebaseConfig = {
     LogoutSpinnerComponent,
     PersonalDataComponent,
     BackNavComponent,
+    SearchResultsComponent,
   ],
   imports: [
     BrowserModule,
