@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AngularFireDatabase, AngularFireList} from '@angular/fire/database';
 import {Observable} from 'rxjs';
 import {Router} from "@angular/router";
-import {Product} from "../models/product";
 import {ProductService} from "../services/product.service";
 
 interface Brand {
@@ -15,6 +14,10 @@ interface Brand {
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
+
+  type: string = 'any';
+  brand: string = 'any';
+  color: string = 'any';
 
   searchName: string = '';
   brandsList: Observable<Brand[]>;
@@ -32,8 +35,13 @@ export class SearchComponent implements OnInit {
   }
 
   async searchWithName() {
-    const results =  await this.productService.getProductsByName(this.searchName);
-    this.router.navigateByUrl('search-results', { state: { data: { productList: results }}});
+    const results = await this.productService.getProductsByName(this.searchName);
+    this.router.navigateByUrl('search-results', {state: {data: {productList: results}}});
+  }
+
+  async searchWithTypeBrandName() {
+    const results = await this.productService.getProductsByTypeBrandName(this.type, this.brand, this.color);
+    this.router.navigateByUrl('search-results', {state: {data: {productList: results}}});
   }
 
 }

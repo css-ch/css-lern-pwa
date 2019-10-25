@@ -14,7 +14,7 @@
 <div class="allgemeine-suche-wrapper">
   <mat-form-field class="search-input">
     <mat-label>Produktart</mat-label>
-    <mat-select>
+    <mat-select [(ngModel)]="type">
       <mat-option value="Hosen">
         Hosen
       </mat-option>
@@ -29,7 +29,7 @@
 
   <mat-form-field class="search-input">
     <mat-label>Marke</mat-label>
-    <mat-select>
+    <mat-select [(ngModel)]="brand">
       <mat-option *ngFor="let brand of brandsList | async" [value]="brand.name">
         {{brand.name}}
       </mat-option>
@@ -38,7 +38,7 @@
 
   <mat-form-field class="search-input">
     <mat-label>Farbe</mat-label>
-    <mat-select>
+    <mat-select [(ngModel)]="color">
       <mat-option value="Gelb">
         Gelb
       </mat-option>
@@ -51,6 +51,6 @@
     </mat-select>
   </mat-form-field>
 
-  <button mat-raised-button color="primary" class="search-button">Suchen</button>
+  <button mat-raised-button color="primary" class="search-button" (click)="searchWithTypeBrandName()">Suchen</button>
 </div>
 <app-nav></app-nav>
