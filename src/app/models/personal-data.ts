@@ -3,4 +3,5 @@ export interface PersonalData {
   address: string;
   postcode: string;
   city: string;
+  uid: string;
 }

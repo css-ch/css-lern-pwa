@@ -1,15 +1,22 @@
-import {Component, OnDestroy} from '@angular/core';
-import {AuthService} from './_core/auth.service';
-import {Router} from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+
+import {FirebaseAuth} from "@angular/fire";
+import {AuthService} from "./_core/auth.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  constructor() {
+  constructor(private authService: AuthService) {
   }
+
+  ngOnInit(): void {
+    this.authService.useDeviceLang();
+  }
+
+
 
 }

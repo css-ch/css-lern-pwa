@@ -28,6 +28,7 @@ export class AuthService {
         displayName: user.displayname
       });
       this.toastService.createToastMessage('Registration erfolgreich');
+      this.loginWithEmailAndPassword(user);
       this.router.navigateByUrl('/success');
     }).catch((e) => {
       this.toastService.createToastMessage(e.message);
@@ -44,5 +45,18 @@ export class AuthService {
 
   getCurrentUser() {
     return this.afAuth.auth.currentUser;
+  }
+
+  getCurrentUserUid() {
+    return this.afAuth.auth.currentUser.uid;
+  }
+
+  changePassword(email: string) {
+    this.afAuth.auth.sendPasswordResetEmail(email);
+    this.toastService.createToastMessage('Dir wurde eine Email zum Passwort reset geschickt');
+  }
+
+  useDeviceLang() {
+    this.afAuth.auth.useDeviceLanguage();
   }
 }
