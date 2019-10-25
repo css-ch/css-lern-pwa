@@ -27,6 +27,7 @@ import {LogoutSpinnerComponent} from './components/logout-spinner/logout-spinner
 import { PersonalDataComponent } from './personal-data/personal-data.component';
 import { BackNavComponent } from './components/back-nav/back-nav.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
+import {HttpClientModule} from "@angular/common/http";
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyBYlCWINMXHIIpZ94hq4nSAA9WQoFLhXlU',
@@ -57,6 +58,7 @@ export const firebaseConfig = {
     SearchResultsComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,

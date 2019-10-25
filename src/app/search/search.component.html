@@ -3,10 +3,12 @@
 <p class="title">Produktsuche</p>
 <div class="produktsuche-wrapper">
   <mat-form-field class="search-input">
-    <input matInput placeholder="Produkt" name="product">
+    <input matInput placeholder="Produkt" name="product" [(ngModel)]="searchName">
   </mat-form-field>
-  <button mat-raised-button color="primary" class="search-button" [routerLink]="['/search-results']">Suchen</button>
+  <button mat-raised-button color="primary" class="search-button" (click)="searchWithName()">Suchen</button>
 </div>
+
+<mat-divider></mat-divider>
 
 <p class="title">Allgemeine Suche</p>
 <div class="allgemeine-suche-wrapper">

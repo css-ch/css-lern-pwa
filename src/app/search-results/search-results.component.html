@@ -1,6 +1,6 @@
 <app-back-nav pageTitle="Suchergebnisse" pageIcon="search">></app-back-nav>
 <div class="overflow-wrapper">
-  <mat-card class="product-card" *ngFor="let product of productList | async">
+  <mat-card class="product-card" *ngFor="let product of productList">
     <img mat-card-image [src]="product.image" alt="Product-Image">
     <mat-card-content>
       <h2>{{product.name}}</h2>
