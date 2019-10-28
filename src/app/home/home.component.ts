@@ -1,6 +1,6 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../_core/auth.service';
-import {User} from 'firebase';
+import {User} from "firebase";
 
 @Component({
   selector: 'app-home',
@@ -11,10 +11,12 @@ export class HomeComponent implements OnInit {
 
   currentUser: User;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService) {
+  }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.currentUser = this.authService.getCurrentUser();
+
   }
 
 }

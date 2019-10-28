@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {AuthService} from '../_core/auth.service';
@@ -6,6 +6,7 @@ import {User} from '../models/user';
 import {PersonalData} from '../models/personal-data';
 import {ToastService} from '../services/toast.service';
 import {AngularFireDatabase, AngularFireList} from "@angular/fire/database";
+import {PersonalDataService} from "../services/personal.data.service";
 
 @Component({
   selector: 'app-registration',
@@ -23,7 +24,9 @@ export class RegistrationComponent implements OnInit {
               private router: Router,
               private authService: AuthService,
               private toastService: ToastService,
-              private afDb: AngularFireDatabase) { }
+              private afDb: AngularFireDatabase,
+              private personalDataService: PersonalDataService) {
+  }
 
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({
@@ -37,9 +40,9 @@ export class RegistrationComponent implements OnInit {
   public registerUser() {
     if (this.firstFormGroup.valid && this.secondFormGroup.valid) {
       this.authService.createUserWithEmailAndPassword(this.userdata).then(() => {
-        this.userListRef = this.afDb.list('users');
         this.personalData.uid = this.authService.getCurrentUserUid();
-        this.userListRef.push(this.personalData);
+        this.personalDataService.createPersonalData(this.personalData);
+
       });
     } else {
       this.toastService.createToastMessage('Alle Felder müssen gefüllt sein!');
