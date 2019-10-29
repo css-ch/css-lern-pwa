@@ -1,29 +1,29 @@
 <app-back-nav pageTitle="Persönliche Daten" pageIcon="edit"></app-back-nav>
 
-<mat-list *ngFor="let data of userData | async">
+<mat-list>
   <mat-list-item class="personal-data-item">
     <mat-form-field class="personal-data-input">
-      <input matInput placeholder="Voller Name" value="{{data.fullname}}">
+      <input matInput placeholder="Voller Name" [(ngModel)]="personalData.fullname">
     </mat-form-field>
   </mat-list-item>
   <mat-divider></mat-divider>
   <mat-list-item class="personal-data-item">
     <mat-form-field class="personal-data-input">
-      <input matInput placeholder="Adresse" value="{{data.address}}">
+      <input matInput placeholder="Adresse" [(ngModel)]="personalData.address">
     </mat-form-field>
   </mat-list-item>
   <mat-divider></mat-divider>
   <mat-list-item class="personal-data-item">
     <mat-form-field class="personal-data-input">
-      <input matInput placeholder="PLZ" value="{{data.postcode}}">
+      <input matInput placeholder="PLZ" [(ngModel)]="personalData.postcode">
     </mat-form-field>
   </mat-list-item>
   <mat-divider></mat-divider>
   <mat-list-item class="personal-data-item">
     <mat-form-field class="personal-data-input">
-      <input matInput placeholder="Stadt" value="{{data.city}}">
+      <input matInput placeholder="Stadt" [(ngModel)]="personalData.city">
     </mat-form-field>
   </mat-list-item>
   <mat-divider></mat-divider>
-  <button mat-flat-button color="primary" class="save-button">Speichern</button>
+  <button mat-flat-button color="primary" class="save-button" (click)="changePersonalData()">Speichern</button>
 </mat-list>

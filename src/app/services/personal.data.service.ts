@@ -18,4 +18,9 @@ export class PersonalDataService {
   async getPersonalDataByUID(uid: string) {
     return this.http.get<PersonalData>(environment.apiUrl + '/personal-data/' + uid).toPromise();
   }
+
+  async changePersonalData(personalData: PersonalData) {
+    return this.http.put(environment.apiUrl + '/personal-data/change', personalData).toPromise();
+  }
+
 }

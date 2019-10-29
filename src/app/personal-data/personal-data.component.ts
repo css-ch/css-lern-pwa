@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import {AngularFireDatabase, AngularFireList} from "@angular/fire/database";
-import {AuthService} from "../_core/auth.service";
+import {Component, OnInit} from '@angular/core';
 import {PersonalData} from "../models/personal-data";
-import {Observable} from "rxjs";
+import {PersonalDataService} from "../services/personal.data.service";
+import {AuthService} from "../_core/auth.service";
+import {ToastService} from "../services/toast.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-personal-data',
@@ -11,18 +12,23 @@ import {Observable} from "rxjs";
 })
 export class PersonalDataComponent implements OnInit {
 
-  public userData: Observable<PersonalData[]>;
-  public userDataRef: AngularFireList<PersonalData>;
+  public personalData: PersonalData = {fullname: '', city: '', postcode: '', address: '', uid: ''};
 
-  constructor(private db: AngularFireDatabase,
-              private authService: AuthService) { }
+  constructor(private personalDataService: PersonalDataService,
+              private authService: AuthService,
+              private toastService: ToastService,
+              private router: Router) {
+  }
 
-  ngOnInit() {
-    this.userDataRef = this.db.list('users', ref => ref
-      .orderByChild('uid')
-      .equalTo(this.authService.getCurrentUserUid())
-    );
-    this.userData = this.userDataRef.valueChanges();
+  async ngOnInit() {
+    this.personalData = await this.personalDataService.getPersonalDataByUID(this.authService.getCurrentUser().uid);
+  }
+
+  public async changePersonalData() {
+    await this.personalDataService.changePersonalData(this.personalData).then(() => {
+      this.toastService.createToastMessage('Daten erfolgreich geändert.');
+      this.router.navigateByUrl('settings');
+    });
   }
 
 }
