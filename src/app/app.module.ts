@@ -29,6 +29,7 @@ import { BackNavComponent } from './components/back-nav/back-nav.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import {HttpClientModule} from "@angular/common/http";
 import { ChangeUsernameComponent } from './change-username/change-username.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyBYlCWINMXHIIpZ94hq4nSAA9WQoFLhXlU',
@@ -58,6 +59,7 @@ export const firebaseConfig = {
     BackNavComponent,
     SearchResultsComponent,
     ChangeUsernameComponent,
+    ProductDetailComponent,
   ],
   imports: [
     HttpClientModule,

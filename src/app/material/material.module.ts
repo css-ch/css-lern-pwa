@@ -3,6 +3,7 @@ import {
   MatButtonModule,
   MatButtonToggleModule,
   MatCardModule,
+  MatChipsModule,
   MatDialogModule,
   MatDividerModule,
   MatExpansionModule,
@@ -48,7 +49,8 @@ import {
     MatSlideToggleModule,
     MatSnackBarModule,
     MatIconModule,
-    MatGridListModule
+    MatGridListModule,
+    MatChipsModule
   ],
   exports: [
     MatToolbarModule,
@@ -73,7 +75,8 @@ import {
     MatButtonToggleModule,
     MatProgressSpinnerModule,
     MatStepperModule,
-    MatGridListModule
+    MatGridListModule,
+    MatChipsModule
   ]
 })
 export class MaterialModule {
