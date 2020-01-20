@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {AngularFireDatabase, AngularFireList} from '@angular/fire/database';
 import {Observable} from 'rxjs';
-import {Router} from "@angular/router";
-import {ProductService} from "../services/product.service";
+import {Router} from '@angular/router';
+import {ProductService} from '../services/product.service';
 
 interface Brand {
   name: string;

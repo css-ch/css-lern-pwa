@@ -51,6 +51,12 @@ export class AuthService {
     return this.afAuth.auth.currentUser.uid;
   }
 
+  changeUsername(username: string) {
+    this.afAuth.auth.currentUser.updateProfile({
+      displayName: username
+    });
+  }
+
   changePassword(email: string) {
     this.afAuth.auth.sendPasswordResetEmail(email);
     this.toastService.createToastMessage('Dir wurde eine Email zum Passwort reset geschickt');

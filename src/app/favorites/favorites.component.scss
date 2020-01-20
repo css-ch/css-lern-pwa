@@ -1,0 +1,11 @@
+.show-product-button {
+  width: calc(100% - 20%);
+  display: inline-block;
+}
+
+.make-favorite-button {
+  width: 20%;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+}

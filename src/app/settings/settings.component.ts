@@ -16,7 +16,7 @@ export class SettingsComponent implements OnInit {
   }
 
   public changeUsername() {
-    this.router.navigateByUrl('/changeUsername');
+    this.router.navigateByUrl('/change-username');
   }
 
   public changePassword() {

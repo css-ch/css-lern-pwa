@@ -5,8 +5,8 @@ import {AuthService} from '../_core/auth.service';
 import {User} from '../models/user';
 import {PersonalData} from '../models/personal-data';
 import {ToastService} from '../services/toast.service';
-import {AngularFireDatabase, AngularFireList} from "@angular/fire/database";
-import {PersonalDataService} from "../services/personal.data.service";
+import {AngularFireDatabase, AngularFireList} from '@angular/fire/database';
+import {PersonalDataService} from '../services/personal.data.service';
 
 @Component({
   selector: 'app-registration',

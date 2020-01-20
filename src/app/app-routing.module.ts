@@ -11,6 +11,8 @@ import {SettingsComponent} from './settings/settings.component';
 import {AuthGuard} from './_core/auth.guard';
 import {PersonalDataComponent} from "./personal-data/personal-data.component";
 import {SearchResultsComponent} from "./search-results/search-results.component";
+import {ChangeUsernameComponent} from './change-username/change-username.component';
+import {LogoutSpinnerComponent} from './components/logout-spinner/logout-spinner.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -24,7 +26,8 @@ const routes: Routes = [
   { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard]},
   { path: 'personal-data', component: PersonalDataComponent, canActivate: [AuthGuard]},
   { path: 'search-results', component: SearchResultsComponent, canActivate: [AuthGuard]},
-
+  { path: 'change-username', component: ChangeUsernameComponent, canActivate: [AuthGuard]},
+  { path: 'logout-spinner', component: LogoutSpinnerComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({

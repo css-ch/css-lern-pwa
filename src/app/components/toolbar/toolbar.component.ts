@@ -18,7 +18,7 @@ export class ToolbarComponent {
   public logout() {
     this.authService.logout();
     this.toastService.createToastMessage('Logout erfolgreich');
-    this.router.navigateByUrl('/login');
+    this.router.navigateByUrl('/logout-spinner');
   }
 
 }

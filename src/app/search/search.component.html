@@ -1,56 +1,75 @@
 <app-toolbar></app-toolbar>
 
-<p class="title">Produktsuche</p>
-<div class="produktsuche-wrapper">
-  <mat-form-field class="search-input">
-    <input matInput placeholder="Produkt" name="product" [(ngModel)]="searchName">
-  </mat-form-field>
-  <button mat-raised-button color="primary" class="search-button" (click)="searchWithName()">Suchen</button>
-</div>
+<mat-accordion>
+  <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Produktsuche
+      </mat-panel-title>
+      <mat-panel-description>
+        Suche nach einem Produktnamen
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="produktsuche-wrapper">
+      <mat-form-field class="search-input">
+        <input matInput placeholder="Produkt" name="product" [(ngModel)]="searchName">
+      </mat-form-field>
+      <button mat-raised-button color="primary" class="search-button" (click)="searchWithName()">Suchen</button>
+    </div>
+  </mat-expansion-panel>
 
-<mat-divider></mat-divider>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Allgemeine Suche
+      </mat-panel-title>
+      <mat-panel-description>
+        Suche nach Produkten die deinen Kriterien entsprechen
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="allgemeine-suche-wrapper">
+      <mat-form-field class="search-input">
+        <mat-label>Produktart</mat-label>
+        <mat-select [(ngModel)]="type">
+          <mat-option value="Hosen">
+            Hosen
+          </mat-option>
+          <mat-option value="T-Shirts">
+            T-Shirts
+          </mat-option>
+          <mat-option value="Socken">
+            Socken
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
-<p class="title">Allgemeine Suche</p>
-<div class="allgemeine-suche-wrapper">
-  <mat-form-field class="search-input">
-    <mat-label>Produktart</mat-label>
-    <mat-select [(ngModel)]="type">
-      <mat-option value="Hosen">
-        Hosen
-      </mat-option>
-      <mat-option value="T-Shirts">
-        T-Shirts
-      </mat-option>
-      <mat-option value="Socken">
-        Socken
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+      <mat-form-field class="search-input">
+        <mat-label>Marke</mat-label>
+        <mat-select [(ngModel)]="brand">
+          <mat-option *ngFor="let brand of brandsList | async" [value]="brand.name">
+            {{brand.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
-  <mat-form-field class="search-input">
-    <mat-label>Marke</mat-label>
-    <mat-select [(ngModel)]="brand">
-      <mat-option *ngFor="let brand of brandsList | async" [value]="brand.name">
-        {{brand.name}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+      <mat-form-field class="search-input">
+        <mat-label>Farbe</mat-label>
+        <mat-select [(ngModel)]="color">
+          <mat-option value="Gelb">
+            Gelb
+          </mat-option>
+          <mat-option value="Schwarz">
+            Schwarz
+          </mat-option>
+          <mat-option value="Weiss">
+            Weiss
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
-  <mat-form-field class="search-input">
-    <mat-label>Farbe</mat-label>
-    <mat-select [(ngModel)]="color">
-      <mat-option value="Gelb">
-        Gelb
-      </mat-option>
-      <mat-option value="Schwarz">
-        Schwarz
-      </mat-option>
-      <mat-option value="Weiss">
-        Weiss
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-
-  <button mat-raised-button color="primary" class="search-button" (click)="searchWithTypeBrandName()">Suchen</button>
-</div>
+      <button mat-raised-button color="primary" class="search-button" (click)="searchWithTypeBrandName()">Suchen
+      </button>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
 <app-nav></app-nav>
