@@ -14,8 +14,8 @@
   </mat-chip-list>
   <p>Marke: {{product.brand}}</p>
   <p>Preis: {{product.price}}</p>
-  <button mat-raised-button>In den Warenkorb</button>
-  <button mat-raised-button>
+  <button mat-raised-button (click)="addProductToCart()">In den Warenkorb</button>
+  <button mat-raised-button (click)="emptyCart()">
     <mat-icon>favorite_border</mat-icon>
   </button>
 </div>

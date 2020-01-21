@@ -3,7 +3,7 @@
     <h1>PWABay</h1>
     <div>
       <button mat-flat-button color="primary" class="shopping-cart-button">
-        0.00 CHF
+        {{priceSum}} CHF
         <mat-icon [routerLink]="['/shopping-cart']">shopping_cart</mat-icon>
       </button>
       <button mat-flat-button color="primary" class="logout-button" (click)="logout()">

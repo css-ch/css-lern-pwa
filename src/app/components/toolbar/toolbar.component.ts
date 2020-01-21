@@ -1,18 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../_core/auth.service';
 import {Router} from '@angular/router';
 import {ToastService} from '../../services/toast.service';
+import {ShoppingCartService} from '../../services/shopping-cart.service';
+import {Product} from '../../models/product';
 
 @Component({
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.scss']
 })
-export class ToolbarComponent {
+export class ToolbarComponent implements OnInit {
+
+  public priceSum: number;
+  public shoppingCart: Product[];
 
   constructor(private authService: AuthService,
               private router: Router,
-              private toastService: ToastService) {
+              private toastService: ToastService,
+              private shoppingCartService: ShoppingCartService) {
   }
 
   public logout() {
@@ -21,4 +27,23 @@ export class ToolbarComponent {
     this.router.navigateByUrl('/logout-spinner');
   }
 
+  async ngOnInit() {
+    this.shoppingCartService.shoppingCartState$.subscribe(async () => {
+      await this.updateShoppingCart();
+    });
+    await this.updateShoppingCart();
+  }
+
+  private async updateShoppingCart() {
+    this.shoppingCart = await this.shoppingCartService.getCart();
+    this.sumPrice();
+  }
+
+  private sumPrice() {
+    let sum = 0.00;
+    for (const product of this.shoppingCart) {
+      sum += product.price;
+    }
+    this.priceSum = sum;
+  }
 }
