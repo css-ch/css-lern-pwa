@@ -13,7 +13,7 @@
     <mat-chip>{{product.color}}</mat-chip>
   </mat-chip-list>
   <p>Marke: {{product.brand}}</p>
-  <p>Preis: {{product.price}}</p>
+  <p>Preis: {{product.price.toFixed(2)}} CHF</p>
   <button mat-raised-button (click)="addProductToCart()">In den Warenkorb</button>
   <button mat-raised-button (click)="emptyCart()">
     <mat-icon>favorite_border</mat-icon>

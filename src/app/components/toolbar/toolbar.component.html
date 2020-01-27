@@ -2,9 +2,9 @@
   <mat-toolbar-row>
     <h1>PWABay</h1>
     <div>
-      <button mat-flat-button color="primary" class="shopping-cart-button">
-        {{priceSum}} CHF
-        <mat-icon [routerLink]="['/shopping-cart']">shopping_cart</mat-icon>
+      <button mat-flat-button color="primary" class="shopping-cart-button" [routerLink]="['/shopping-cart']">
+        {{priceSum.toFixed(2)}} CHF
+        <mat-icon>shopping_cart</mat-icon>
       </button>
       <button mat-flat-button color="primary" class="logout-button" (click)="logout()">
         <mat-icon>launch</mat-icon>

@@ -4,7 +4,7 @@
     <img mat-card-image [src]="product.image" alt="Product-Image">
     <mat-card-content>
       <h2>{{product.name}}</h2>
-      <h3>{{product.price}} Fr.</h3>
+      <h3>{{product.price.toFixed(2)}} Fr.</h3>
     </mat-card-content>
     <mat-card-actions>
       <button mat-button class="show-product-button" (click)="showProductDetails(product)">Anzeigen</button>

@@ -15,6 +15,7 @@ import {
   MatMenuModule,
   MatPaginatorModule,
   MatProgressSpinnerModule,
+  MatRippleModule,
   MatSelectModule,
   MatSidenavModule,
   MatSlideToggleModule,
@@ -50,7 +51,8 @@ import {
     MatSnackBarModule,
     MatIconModule,
     MatGridListModule,
-    MatChipsModule
+    MatChipsModule,
+    MatRippleModule,
   ],
   exports: [
     MatToolbarModule,
@@ -76,7 +78,8 @@ import {
     MatProgressSpinnerModule,
     MatStepperModule,
     MatGridListModule,
-    MatChipsModule
+    MatChipsModule,
+    MatRippleModule
   ]
 })
 export class MaterialModule {

@@ -24,7 +24,13 @@ export class ShoppingCartService {
   }
 
   public async emptyCart() {
-    await this.http.post(environment.apiUrl + '/shopping-cart/empty', {}).toPromise();
+    await this.http.post(environment.apiUrl + '/shopping-cart/empty', {}, {responseType: 'text'}).toPromise();
     this.shoppingCartState$.next();
+  }
+
+  public async removeProductFromShoppingCart(product: Product) {
+    await this.http.post(environment.apiUrl + '/shopping-cart/remove', product, {responseType: 'text'}).toPromise().then(() => {
+      this.shoppingCartState$.next();
+    });
   }
 }

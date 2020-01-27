@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Product} from '../models/product';
 import {ShoppingCartService} from '../services/shopping-cart.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-product-detail',
@@ -11,11 +12,16 @@ export class ProductDetailComponent implements OnInit {
 
   public product: Product = {name: '', image: '', price: 0, brand: '', color: '', id: 0, type: ''};
 
-  constructor(private shoppingCartService: ShoppingCartService) {
+  constructor(private shoppingCartService: ShoppingCartService,
+              private router: Router) {
   }
 
   ngOnInit() {
-    this.product = history.state.data.product;
+    try {
+      this.product = history.state.data.product;
+    } catch (e) {
+      this.router.navigateByUrl('/home');
+    }
   }
 
   addProductToCart() {

@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FavoriteService} from '../services/favorite.service';
 import {AuthService} from '../_core/auth.service';
 import {Product} from '../models/product';
 import {PersonalDataService} from '../services/personal.data.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-favorites',
@@ -15,7 +16,8 @@ export class FavoritesComponent implements OnInit {
 
   constructor(private favoriteService: FavoriteService,
               private authService: AuthService,
-              private userService: PersonalDataService) {
+              private userService: PersonalDataService,
+              private router: Router) {
   }
 
   async ngOnInit() {
@@ -35,5 +37,9 @@ export class FavoritesComponent implements OnInit {
     await this.favoriteService.toggleFavorite(await this.userService.getPersonalDataByUID(this.authService.getCurrentUserUid()), product);
     this.favorites = [];
     this.loadFavorites();
+  }
+
+  openProductDetails(product: Product) {
+    this.router.navigateByUrl('/product-detail', {state: {data: {product: product}}});
   }
 }

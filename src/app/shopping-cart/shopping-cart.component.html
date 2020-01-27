@@ -1,2 +1,29 @@
-<app-toolbar></app-toolbar>
-<app-nav></app-nav>
+<app-back-nav pageTitle="Warenkorb" pageIcon="shopping_cart"></app-back-nav>
+
+<mat-list>
+
+  <mat-divider></mat-divider>
+
+  <mat-list-item *ngFor="let product of productsInCartDistinct">
+    <h4 mat-line>{{product.product.name}}</h4>
+
+    <button (click)="removeFromCart(product.product)">-</button>
+    {{product.amount}}
+    <button (click)="addToCart(product.product)">+</button>
+
+    <div>
+      <p>Preis {{product.product.price.toFixed(2)}}</p>
+    </div>
+    <div>
+      <p>Total {{product.total.toFixed(2)}}</p>
+    </div>
+    <mat-divider></mat-divider>
+  </mat-list-item>
+
+  <mat-list-item class="total-item" (click)="confirm()">
+    Kauf bestätigen {{sumCHF.toFixed(2)}} CHF
+  </mat-list-item>
+
+  <mat-divider></mat-divider>
+
+</mat-list>

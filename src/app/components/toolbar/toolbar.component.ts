@@ -12,7 +12,7 @@ import {Product} from '../../models/product';
 })
 export class ToolbarComponent implements OnInit {
 
-  public priceSum: number;
+  public priceSum = 0;
   public shoppingCart: Product[];
 
   constructor(private authService: AuthService,

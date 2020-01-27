@@ -12,11 +12,15 @@ export class ProductService {
   }
 
   public async getProductsByName(name: string) {
-    return await this.http.get<Product[]>(environment.apiUrl + '/product/' + name).toPromise();
+    return await this.http.get<Product[]>(environment.apiUrl + '/product/find/' + name).toPromise();
   }
 
   public async getProductsByTypeBrandName(type: string, brand: string, color: string) {
     return await this.http.get<Product[]>(environment.apiUrl + '/product/'
       + type + '/' + brand + '/' + color).toPromise();
+  }
+
+  public async getProducts() {
+    return await this.http.get<Product[]>(environment.apiUrl + '/product/all').toPromise();
   }
 }
