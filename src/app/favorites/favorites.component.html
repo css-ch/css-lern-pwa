@@ -6,24 +6,8 @@
     <mat-grid-tile-footer>
       <h3>{{favorite.name}}</h3>
       <button mat-button class="make-favorite-button" (click)="toggleFavorite(favorite)">
-        <mat-icon>favorite_border</mat-icon>
+        <mat-icon>favorite</mat-icon>
       </button>
     </mat-grid-tile-footer>
   </mat-grid-tile>
 </mat-grid-list>
-
-<!--
-<mat-card class="product-card" *ngFor="let favorite of favorites">
-  <img mat-card-image [src]="favorite.image" alt="product-image">
-  <mat-card-content>
-    <h3>{{favorite.name}}</h3>
-    <p>{{favorite.price}} CHF</p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button class="show-product-button">Anzeigen</button>
-    <button mat-button class="make-favorite-button" (click)="toggleFavorite(favorite)">
-    <mat-icon>favorite_border</mat-icon>
-  </button>
-  </mat-card-actions>
-</mat-card>
--->
