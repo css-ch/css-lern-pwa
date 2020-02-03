@@ -4,7 +4,7 @@
     <div>
       <button mat-flat-button color="primary" class="shopping-cart-button" [routerLink]="['/shopping-cart']">
         {{priceSum.toFixed(2)}} CHF
-        <mat-icon>shopping_cart</mat-icon>
+        <mat-icon class="cart-icon">shopping_cart</mat-icon>
       </button>
       <button mat-flat-button color="primary" class="logout-button" (click)="logout()">
         <mat-icon>launch</mat-icon>

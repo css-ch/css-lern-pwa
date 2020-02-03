@@ -27,9 +27,9 @@ export class CheckoutComponent implements OnInit {
     this.personalData = await this.personalDataService.getPersonalDataByUID(this.authService.getCurrentUserUid());
   }
 
-  checkout() {
+  async checkout() {
     this.toastService.createToastMessage('Ihr Einkauf wurde getätigt');
-    this.shoppingCartService.emptyCart();
-    this.router.navigateByUrl('/home');
+    await this.shoppingCartService.emptyCart();
+    await this.router.navigateByUrl('/home');
   }
 }

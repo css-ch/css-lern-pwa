@@ -6,9 +6,9 @@
         Zurück
       </button>
     </div>
-    <h1 class="header-title">
-      <mat-icon fxLayoutAlign="center" *ngIf="pageIcon">{{pageIcon}}</mat-icon>
+    <div class="header-title">
+      <mat-icon *ngIf="pageIcon" class="header-icon">{{pageIcon}}</mat-icon>
       {{pageTitle}}
-    </h1>
+    </div>
   </mat-toolbar-row>
 </mat-toolbar>
