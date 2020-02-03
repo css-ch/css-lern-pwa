@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 
-import {FirebaseAuth} from "@angular/fire";
-import {AuthService} from "./_core/auth.service";
+import {AuthService} from './_core/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +15,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.authService.useDeviceLang();
   }
-
 
 
 }

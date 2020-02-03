@@ -15,11 +15,11 @@ interface Brand {
 })
 export class SearchComponent implements OnInit {
 
-  type: string = 'any';
-  brand: string = 'any';
-  color: string = 'any';
+  type = 'any';
+  brand = 'any';
+  color = 'any';
 
-  searchName: string = '';
+  searchName = '';
   brandsList: Observable<Brand[]>;
   brandsListRef: AngularFireList<Brand>;
 

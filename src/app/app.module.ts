@@ -31,6 +31,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {ChangeUsernameComponent} from './change-username/change-username.component';
 import {ProductDetailComponent} from './product-detail/product-detail.component';
 import {HttpInterceptorService} from './http-interceptor.service';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyBYlCWINMXHIIpZ94hq4nSAA9WQoFLhXlU',
@@ -61,6 +62,7 @@ export const firebaseConfig = {
     SearchResultsComponent,
     ChangeUsernameComponent,
     ProductDetailComponent,
+    CheckoutComponent,
   ],
   imports: [
     HttpClientModule,

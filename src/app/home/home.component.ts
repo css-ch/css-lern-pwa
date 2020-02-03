@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../_core/auth.service';
-import {User} from "firebase";
+import {User} from 'firebase';
 
 @Component({
   selector: 'app-home',

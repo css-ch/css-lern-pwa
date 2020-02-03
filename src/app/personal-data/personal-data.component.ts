@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {PersonalData} from "../models/personal-data";
-import {PersonalDataService} from "../services/personal.data.service";
-import {AuthService} from "../_core/auth.service";
-import {ToastService} from "../services/toast.service";
-import {Router} from "@angular/router";
+import {PersonalData} from '../models/personal-data';
+import {PersonalDataService} from '../services/personal.data.service';
+import {AuthService} from '../_core/auth.service';
+import {ToastService} from '../services/toast.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-personal-data',
