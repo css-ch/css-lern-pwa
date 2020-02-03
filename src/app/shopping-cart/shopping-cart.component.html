@@ -4,6 +4,10 @@
 
   <mat-divider></mat-divider>
 
+  <mat-list-item *ngIf="productsInCartDistinct.length === 0">
+    Sie haben keine Produkte im Warenkorb
+  </mat-list-item>
+
   <mat-list-item *ngFor="let product of productsInCartDistinct">
     <h4 mat-line>{{product.product.name}}</h4>
 
