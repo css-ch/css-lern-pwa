@@ -25,6 +25,11 @@
     </mat-form-field>
   </div>
 
+  <div class="sum-wrapper">
+    <h3>Gesamtbetrag</h3>
+    <p>{{sum.toFixed(2)}} CHF</p>
+  </div>
+
 </div>
 
 <button mat-flat-button color="primary" class="checkout-button" (click)="checkout()">Bestätigen</button>

@@ -96,7 +96,7 @@ export class ShoppingCartComponent implements OnInit {
 
   confirm() {
     if (this.productsInCartDistinct.length !== 0 && this.sumCHF !== 0) {
-      this.router.navigateByUrl('checkout');
+      this.router.navigateByUrl('checkout', {state: {data: {sum: this.sumCHF}}});
     } else {
       this.toastService.createToastMessage('Ihr Warenkorb ist leer!');
     }

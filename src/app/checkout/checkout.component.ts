@@ -13,6 +13,7 @@ import {Router} from '@angular/router';
 export class CheckoutComponent implements OnInit {
 
   public personalData = {fullname: '', address: '', postcode: '', city: '', uid: ''};
+  public sum = 0;
 
   constructor(private personalDataService: PersonalDataService,
               private authService: AuthService,
@@ -22,6 +23,7 @@ export class CheckoutComponent implements OnInit {
   }
 
   async ngOnInit() {
+    this.sum = history.state.data.sum;
     this.personalData = await this.personalDataService.getPersonalDataByUID(this.authService.getCurrentUserUid());
   }
 
