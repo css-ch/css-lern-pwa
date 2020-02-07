@@ -2,3 +2,19 @@
   width: 100%;
   text-align: center;
 }
+
+.show-product-button {
+  width: calc(100% - 20%);
+  display: inline-block;
+}
+
+.make-favorite-button {
+  width: 20%;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+}
+
+img {
+  width: 50%;
+}
