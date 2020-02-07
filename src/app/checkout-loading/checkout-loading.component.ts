@@ -17,8 +17,10 @@ export class CheckoutLoadingComponent implements OnInit {
 
   ngOnInit() {
     setTimeout(() => {
+      document.body.style.backgroundColor = '#38b825';
       this.accepted = true;
       setTimeout(() => {
+        document.body.style.backgroundColor = 'white';
         this.toastService.createToastMessage('Ihr Einkauf wurde getätigt');
         this.router.navigateByUrl('/home');
       }, 1500);
