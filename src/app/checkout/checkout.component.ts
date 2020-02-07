@@ -28,8 +28,7 @@ export class CheckoutComponent implements OnInit {
   }
 
   async checkout() {
-    this.toastService.createToastMessage('Ihr Einkauf wurde getätigt');
     await this.shoppingCartService.emptyCart();
-    await this.router.navigateByUrl('/home');
+    await this.router.navigateByUrl('/checkout-loading');
   }
 }
