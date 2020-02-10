@@ -44,4 +44,9 @@ export class SearchComponent implements OnInit {
     this.router.navigateByUrl('search-results', {state: {data: {productList: results}}});
   }
 
+  async searchAllProducts() {
+    this.productService.getProducts().then(async (allProducts) => {
+      this.router.navigateByUrl('search-results', {state: {data: {productList: {productEntities: allProducts}}}});
+    });
+  }
 }

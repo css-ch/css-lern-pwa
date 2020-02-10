@@ -1,5 +1,8 @@
 <app-toolbar></app-toolbar>
 
+<button mat-raised-button color="primary" class="all-products-button" (click)="searchAllProducts()">Alle Produkte
+</button>
+
 <mat-accordion>
   <mat-expansion-panel [expanded]="true">
     <mat-expansion-panel-header>
@@ -39,6 +42,12 @@
           </mat-option>
           <mat-option value="Socken">
             Socken
+          </mat-option>
+          <mat-option value="Pullover">
+            Pullover
+          </mat-option>
+          <mat-option value="Schuhe">
+            Schuhe
           </mat-option>
         </mat-select>
       </mat-form-field>

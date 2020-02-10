@@ -22,6 +22,7 @@ export class SearchResultsComponent implements OnInit {
 
   ngOnInit() {
     this.productList = history.state.data.productList.productEntities;
+
   }
 
   async toggleFavorite(product: Product) {

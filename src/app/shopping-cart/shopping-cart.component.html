@@ -13,7 +13,7 @@
 
     <button (click)="removeFromCart(product.product)">-</button>
     {{product.amount}}
-    <button (click)="addToCart(product.product)">+</button>
+    <button (click)="addToCart(product.product)" class="add-button">+</button>
 
     <div>
       <p>Preis {{product.product.price.toFixed(2)}}</p>
