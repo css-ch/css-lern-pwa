@@ -10,20 +10,15 @@ import {FavoriteService} from '../../services/favorite.service';
 })
 export class NavComponent implements OnInit {
 
+  favoriteCount: number;
+
   constructor(private authService: AuthService,
               private router: Router,
               private favoriteService: FavoriteService) {
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+    this.favoriteCount = await this.favoriteService.getFavoriteCountByUuid(this.authService.getCurrentUserUid());
   }
 
-  private logout() {
-    this.authService.logout();
-    this.router.navigateByUrl('/login');
-  }
-
-  getFavoriteCount() {
-    return 0;
-  }
 }
