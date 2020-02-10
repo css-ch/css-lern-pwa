@@ -2,12 +2,12 @@
 
 @include mat-core();
 
-$css-admin-primary: mat-palette($mat-deep-purple, 500);
+$css-admin-primary: mat-palette($mat-purple, 900);
 $css-admin-accent: mat-palette($mat-deep-purple, 300);
 
 $css-admin-theme: mat-light-theme($css-admin-primary, $css-admin-accent);
 $css-typography: mat-typography-config(
-  $font-family: 'Skia'
+  $font-family: 'sans-serif'
 );
 
 @include angular-material-typography($css-typography);
