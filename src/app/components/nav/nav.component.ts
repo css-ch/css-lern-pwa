@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../_core/auth.service';
 import {Router} from '@angular/router';
+import {FavoriteService} from '../../services/favorite.service';
 
 @Component({
   selector: 'app-nav',
@@ -10,7 +11,9 @@ import {Router} from '@angular/router';
 export class NavComponent implements OnInit {
 
   constructor(private authService: AuthService,
-              private router: Router) { }
+              private router: Router,
+              private favoriteService: FavoriteService) {
+  }
 
   ngOnInit() {
   }
@@ -20,4 +23,7 @@ export class NavComponent implements OnInit {
     this.router.navigateByUrl('/login');
   }
 
+  getFavoriteCount() {
+    return 0;
+  }
 }
