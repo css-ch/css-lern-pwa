@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {
+  MatBadgeModule,
   MatButtonModule,
   MatButtonToggleModule,
   MatCardModule,
@@ -37,6 +38,7 @@ import {
     MatCardModule,
     MatDividerModule,
     MatTableModule,
+    MatBadgeModule,
     MatPaginatorModule,
     MatFormFieldModule,
     MatInputModule,
@@ -66,6 +68,7 @@ import {
     MatMenuModule,
     MatCardModule,
     MatDividerModule,
+    MatBadgeModule,
     MatTableModule,
     MatPaginatorModule,
     MatFormFieldModule,
