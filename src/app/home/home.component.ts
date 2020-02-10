@@ -12,7 +12,7 @@ import {Product} from '../models/product';
 export class HomeComponent implements OnInit {
 
   currentUser: User;
-  product: Product[];
+  product: Product = {id: -1, image: '', price: 0.00, color: '', type: '', brand: '', name: ''};
 
   constructor(private authService: AuthService,
               private productService: ProductService) {
@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
 
   async ngOnInit() {
     this.currentUser = this.authService.getCurrentUser();
-    this.product = await this.productService.getRandomProducts();
+    this.product = await this.productService.getRandomProduct();
   }
 
 }

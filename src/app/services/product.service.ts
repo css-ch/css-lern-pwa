@@ -24,7 +24,7 @@ export class ProductService {
     return await this.http.get<Product[]>(environment.apiUrl + '/product/all').toPromise();
   }
 
-  public async getRandomProducts() {
-    return await this.http.get<Product[]>(environment.apiUrl + '/product/random').toPromise();
+  public async getRandomProduct() {
+    return await this.http.get<Product>(environment.apiUrl + '/product/random').toPromise();
   }
 }
