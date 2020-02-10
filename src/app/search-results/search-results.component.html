@@ -1,10 +1,11 @@
 <app-back-nav pageTitle="Suchergebnisse" pageIcon="search">></app-back-nav>
 <div class="overflow-wrapper">
   <mat-grid-list cols="2" rowHeight="1:1">
-    <mat-grid-tile *ngFor="let product of productList" (click)="showProductDetails(product)" matRipple>
-      <img [src]="product.image" alt="product-image" style="object-fit: cover; height: inherit; width: inherit;">
+    <mat-grid-tile *ngFor="let product of productList">
+      <img [src]="product.image" alt="product-image" style="object-fit: cover; height: inherit; width: inherit;"
+           (click)="showProductDetails(product)" matRipple>
       <mat-grid-tile-footer>
-        <h3>{{product.name}}</h3><br>
+        <span>{{product.name}}</span>
         <button mat-button class="make-favorite-button" (click)="toggleFavorite(product)">
           <mat-icon>favorite_border</mat-icon>
         </button>
