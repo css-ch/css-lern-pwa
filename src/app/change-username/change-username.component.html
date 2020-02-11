@@ -1,16 +1,20 @@
 <app-back-nav pageTitle="Benutzernamen wechseln" pageIcon="edit"></app-back-nav>
 
-<div class="text-wrapper">
-  <p>Bitte beachte, dass dein Username sich an unsere Richtlinien halten muss.</p>
+<div class="form-wrapper">
+  <div class="text-wrapper">
+    <p>Bitte beachte, dass dein Username sich an unsere Richtlinien halten muss.</p>
+  </div>
 </div>
 
 <mat-list>
-  <mat-list-item class="personal-data-item">
-    <mat-form-field class="personal-data-input">
-      <input matInput placeholder="Voller Name" [(ngModel)]="username">
-    </mat-form-field>
-  </mat-list-item>
-  <mat-divider></mat-divider>
+  <div class="form-wrapper">
+    <mat-list-item class="personal-data-item">
+      <mat-form-field class="personal-data-input">
+        <input matInput placeholder="Voller Name" [(ngModel)]="username">
+      </mat-form-field>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </div>
   <button mat-flat-button color="primary" class="save-button" (click)="changeUsername()">Speichern</button>
 </mat-list>
 
