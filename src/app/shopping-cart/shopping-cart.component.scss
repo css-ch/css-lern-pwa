@@ -5,6 +5,13 @@
   }
 }
 
+@media screen and (max-width: 749px) {
+  .shopping-cart-wrapper {
+    margin-left: 20px;
+    width: calc(100% - 40px);
+  }
+}
+
 .total-item {
   background-image: linear-gradient(#6a1b9a, #12005e);
   color: white;
