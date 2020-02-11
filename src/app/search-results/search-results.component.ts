@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {Product} from '../models/product';
 import {AuthService} from '../_core/auth.service';
 import {PersonalDataService} from '../services/personal.data.service';
@@ -13,6 +13,7 @@ import {Router} from '@angular/router';
 export class SearchResultsComponent implements OnInit {
 
   productList: Product[] = [];
+  innerWidth: any;
 
   constructor(private auth: AuthService,
               private userService: PersonalDataService,
@@ -21,6 +22,7 @@ export class SearchResultsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.innerWidth = window.innerWidth;
     this.productList = history.state.data.productList.productEntities;
 
   }
@@ -31,5 +33,10 @@ export class SearchResultsComponent implements OnInit {
 
   showProductDetails(product: Product) {
     this.router.navigateByUrl('product-detail', {state: {data: {product: product}}});
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.innerWidth = window.innerWidth;
   }
 }
