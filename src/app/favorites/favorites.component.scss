@@ -18,7 +18,11 @@
 }
 
 mat-icon {
-  background-image: linear-gradient(#9575cd, #12005e);
+  background-image: linear-gradient(#ce93d8, #ab47bc);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+::ng-deep .mat-grid-tile .mat-grid-tile-footer, .mat-grid-tile .mat-grid-tile-header {
+  background: linear-gradient(rgb(106, 27, 154, 0.40), rgb(18, 0, 94, 0.90)) !important;
 }

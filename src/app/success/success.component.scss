@@ -1,5 +1,11 @@
 .content {
+  color: #ffffff;
   text-align: center;
+  background-image: linear-gradient(to right top, #12005e, #6a1b9a 60%, #9c27b0);
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .loading-spinner {

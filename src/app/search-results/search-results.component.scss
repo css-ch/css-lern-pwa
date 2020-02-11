@@ -24,3 +24,8 @@ p {
 .amount-to-pay {
   border-bottom: double 3px #000000;
 }
+
+::ng-deep .mat-grid-tile .mat-grid-tile-footer, .mat-grid-tile .mat-grid-tile-header {
+  background: linear-gradient(rgb(106, 27, 154, 0.40), rgb(18, 0, 94, 0.90)) !important;
+}
+
