@@ -5,7 +5,7 @@ import {Injectable} from '@angular/core';
 })
 export class SizeServiceService {
 
-  private isPhone: boolean;
+  public isPhone: boolean;
 
   constructor() {
   }
