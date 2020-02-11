@@ -16,7 +16,7 @@ export class NavComponent implements OnInit {
   constructor(private authService: AuthService,
               private router: Router,
               private favoriteService: FavoriteService,
-              private sizeService: SizeServiceService) {
+              public sizeService: SizeServiceService) {
   }
 
   async ngOnInit() {

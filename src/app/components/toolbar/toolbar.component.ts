@@ -20,7 +20,7 @@ export class ToolbarComponent implements OnInit {
               private router: Router,
               private toastService: ToastService,
               private shoppingCartService: ShoppingCartService,
-              private sizeService: SizeServiceService) {
+              public sizeService: SizeServiceService) {
   }
 
   public logout() {
