@@ -2,6 +2,12 @@
   <mat-toolbar-row>
     <img src="../../assets/img/icons/icon-32.png" alt="logo">
     <h1>PWABay</h1>
+    <div class="large-device-buttons" *ngIf="!sizeService.getIsPhone()">
+      <button mat-flat-button color="primary" [routerLink]="['/home']">Start</button>
+      <button mat-flat-button color="primary" [routerLink]="['/search']">Suchen</button>
+      <button mat-flat-button color="primary" [routerLink]="['/favorites']">Favoriten</button>
+      <button mat-flat-button color="primary" [routerLink]="['/settings']">Einstellungen</button>
+    </div>
     <div>
       <button mat-flat-button color="primary" class="shopping-cart-button" [routerLink]="['/shopping-cart']">
         {{priceSum.toFixed(2)}} CHF

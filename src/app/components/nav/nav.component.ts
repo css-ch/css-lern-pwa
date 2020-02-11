@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../_core/auth.service';
 import {Router} from '@angular/router';
 import {FavoriteService} from '../../services/favorite.service';
+import {SizeServiceService} from '../../services/size-service.service';
 
 @Component({
   selector: 'app-nav',
@@ -14,7 +15,8 @@ export class NavComponent implements OnInit {
 
   constructor(private authService: AuthService,
               private router: Router,
-              private favoriteService: FavoriteService) {
+              private favoriteService: FavoriteService,
+              private sizeService: SizeServiceService) {
   }
 
   async ngOnInit() {

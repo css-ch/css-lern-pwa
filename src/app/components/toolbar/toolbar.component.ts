@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import {ToastService} from '../../services/toast.service';
 import {ShoppingCartService} from '../../services/shopping-cart.service';
 import {Product} from '../../models/product';
+import {SizeServiceService} from '../../services/size-service.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -18,7 +19,8 @@ export class ToolbarComponent implements OnInit {
   constructor(private authService: AuthService,
               private router: Router,
               private toastService: ToastService,
-              private shoppingCartService: ShoppingCartService) {
+              private shoppingCartService: ShoppingCartService,
+              private sizeService: SizeServiceService) {
   }
 
   public logout() {

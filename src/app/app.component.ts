@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 
 import {AuthService} from './_core/auth.service';
+import {SizeServiceService} from './services/size-service.service';
 
 @Component({
   selector: 'app-root',
@@ -9,12 +10,21 @@ import {AuthService} from './_core/auth.service';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService,
+              private sizeService: SizeServiceService) {
   }
 
   ngOnInit(): void {
     this.authService.useDeviceLang();
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    if (window.innerWidth >= 1280) {
+      this.sizeService.setIsPhone(false);
+    } else {
+      this.sizeService.setIsPhone(true);
+    }
+  }
 
 }
