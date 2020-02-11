@@ -1,23 +1,25 @@
 <app-toolbar></app-toolbar>
 
-<mat-grid-list rowHeight="2:1" [cols]="1">
+<mat-grid-list rowHeight="2:1" [cols]="1" class="grid-list">
   <mat-grid-tile>
     <img [src]="product.image" alt="product-image" style="object-fit: cover; height: inherit; width: inherit;">
   </mat-grid-tile>
 </mat-grid-list>
 
-<div class="product-info">
-  <h1>{{product.name}}</h1>
-  <mat-chip-list aria-label="Fish selection">
-    <mat-chip>{{product.type}}</mat-chip>
-    <mat-chip>{{product.color}}</mat-chip>
-  </mat-chip-list>
-  <p>Marke: {{product.brand}}</p>
-  <p>Preis: {{product.price.toFixed(2)}} CHF</p>
-  <button mat-raised-button (click)="addProductToCart()">In den Warenkorb</button>
-  <button mat-raised-button (click)="emptyCart()">
-    <mat-icon>favorite_border</mat-icon>
-  </button>
+<div class="product-info-wrapper">
+  <div class="product-info">
+    <h1>{{product.name}}</h1>
+    <mat-chip-list aria-label="Fish selection">
+      <mat-chip>{{product.type}}</mat-chip>
+      <mat-chip>{{product.color}}</mat-chip>
+    </mat-chip-list>
+    <p>Marke: {{product.brand}}</p>
+    <p>Preis: {{product.price.toFixed(2)}} CHF</p>
+    <button mat-raised-button (click)="addProductToCart()">In den Warenkorb</button>
+    <button mat-raised-button (click)="emptyCart()">
+      <mat-icon>favorite_border</mat-icon>
+    </button>
+  </div>
 </div>
 
 <app-nav></app-nav>

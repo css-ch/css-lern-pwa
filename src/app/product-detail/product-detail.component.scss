@@ -1,3 +1,16 @@
+@media screen and (min-width: 1090px) {
+  .grid-list {
+    margin-left: 25%;
+    width: calc(100% - 50%);
+    padding-bottom: 23% !important;
+  }
+}
+
+.product-info-wrapper {
+  width: 100%;
+}
+
 .product-info {
-  margin-left: 20px;
+  display: table;
+  margin: 0 auto;
 }
