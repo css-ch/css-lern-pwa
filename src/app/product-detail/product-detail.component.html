@@ -16,7 +16,7 @@
     <p>Marke: {{product.brand}}</p>
     <p>Preis: {{product.price.toFixed(2)}} CHF</p>
     <button mat-raised-button (click)="addProductToCart()">In den Warenkorb</button>
-    <button mat-raised-button (click)="emptyCart()">
+    <button mat-raised-button (click)="toggleFavorite()">
       <mat-icon>favorite_border</mat-icon>
     </button>
   </div>
