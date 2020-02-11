@@ -1,7 +1,17 @@
-.settings-wrapper {
-  width: calc(100% - 40px);
-  margin-left: 20px;
+@media screen and (min-width: 750px) {
+  .settings-wrapper {
+    width: calc(100% - 50%);
+    margin-left: 25%;
+  }
 }
+
+@media screen and (max-width: 749px) {
+  .settings-wrapper {
+    width: calc(100% - 40px);
+    margin-left: 20px;
+  }
+}
+
 
 .push-toggle {
   position: absolute;
