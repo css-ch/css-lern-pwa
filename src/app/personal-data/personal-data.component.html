@@ -1,33 +1,36 @@
 <app-back-nav pageTitle="Persönliche Daten" pageIcon="edit"></app-back-nav>
 
-<div class="text-wrapper">
-  <p>Dies sind deine Persönlichen Daten. Bitte beachte, dass diese Daten vollständig und korrekt sein müssen</p>
+<div class="form-wrapper">
+  <div class="text-wrapper">
+    <p>Dies sind deine Persönlichen Daten. Bitte beachte, dass diese Daten vollständig und korrekt sein müssen</p>
+  </div>
 </div>
-
 <mat-list>
-  <mat-list-item class="personal-data-item">
-    <mat-form-field class="personal-data-input">
-      <input matInput placeholder="Voller Name" [(ngModel)]="personalData.fullname">
-    </mat-form-field>
-  </mat-list-item>
-  <mat-divider></mat-divider>
-  <mat-list-item class="personal-data-item">
-    <mat-form-field class="personal-data-input">
-      <input matInput placeholder="Adresse" [(ngModel)]="personalData.address">
-    </mat-form-field>
-  </mat-list-item>
-  <mat-divider></mat-divider>
-  <mat-list-item class="personal-data-item">
-    <mat-form-field class="personal-data-input">
-      <input matInput placeholder="PLZ" [(ngModel)]="personalData.postcode">
-    </mat-form-field>
-  </mat-list-item>
-  <mat-divider></mat-divider>
-  <mat-list-item class="personal-data-item">
-    <mat-form-field class="personal-data-input">
-      <input matInput placeholder="Stadt" [(ngModel)]="personalData.city">
-    </mat-form-field>
-  </mat-list-item>
-  <mat-divider></mat-divider>
+  <div class="form-wrapper">
+    <mat-list-item class="personal-data-item">
+      <mat-form-field class="personal-data-input">
+        <input matInput placeholder="Voller Name" [(ngModel)]="personalData.fullname">
+      </mat-form-field>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item class="personal-data-item">
+      <mat-form-field class="personal-data-input">
+        <input matInput placeholder="Adresse" [(ngModel)]="personalData.address">
+      </mat-form-field>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item class="personal-data-item">
+      <mat-form-field class="personal-data-input">
+        <input matInput placeholder="PLZ" [(ngModel)]="personalData.postcode">
+      </mat-form-field>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item class="personal-data-item">
+      <mat-form-field class="personal-data-input">
+        <input matInput placeholder="Stadt" [(ngModel)]="personalData.city">
+      </mat-form-field>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </div>
   <button mat-flat-button color="primary" class="save-button" (click)="changePersonalData()">Speichern</button>
 </mat-list>
