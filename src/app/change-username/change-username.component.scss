@@ -1,7 +1,17 @@
 @media screen and (min-width: 750px) {
-  .form-wrapper {
+  .form-wrapper, .save-button {
     margin-left: 25%;
     width: calc(100% - 50%);
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .save-button {
+    width: 100%;
+    border-radius: 0px;
+    position: absolute;
+    bottom: 0;
+    height: 7%;
   }
 }
 
@@ -9,15 +19,8 @@
   height: 75px;
 }
 
-.save-button, .personal-data-input {
+.personal-data-input {
   width: 100%;
-}
-
-.save-button {
-  border-radius: 0px;
-  position: absolute;
-  bottom: 0;
-  height: 7%;
 }
 
 .text-wrapper {
