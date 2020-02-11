@@ -1,33 +1,35 @@
 <app-back-nav pageTitle="Warenkorb" pageIcon="shopping_cart"></app-back-nav>
 
-<mat-list>
+<div class="shopping-cart-wrapper">
+  <mat-list>
 
-  <mat-divider></mat-divider>
-
-  <mat-list-item *ngIf="productsInCartDistinct.length === 0">
-    Sie haben keine Produkte im Warenkorb
-  </mat-list-item>
-
-  <mat-list-item *ngFor="let product of productsInCartDistinct">
-    <h4 mat-line>{{product.product.name}}</h4>
-
-    <button (click)="removeFromCart(product.product)">-</button>
-    {{product.amount}}
-    <button (click)="addToCart(product.product)" class="add-button">+</button>
-
-    <div>
-      <p>Preis {{product.product.price.toFixed(2)}}</p>
-    </div>
-    <div>
-      <p>Total {{product.total.toFixed(2)}}</p>
-    </div>
     <mat-divider></mat-divider>
-  </mat-list-item>
 
-  <mat-list-item class="total-item" (click)="confirm()">
-    Kauf bestätigen {{sumCHF.toFixed(2)}} CHF
-  </mat-list-item>
+    <mat-list-item *ngIf="productsInCartDistinct.length === 0">
+      Sie haben keine Produkte im Warenkorb
+    </mat-list-item>
 
-  <mat-divider></mat-divider>
+    <mat-list-item *ngFor="let product of productsInCartDistinct">
+      <h4 mat-line>{{product.product.name}}</h4>
 
-</mat-list>
+      <button (click)="removeFromCart(product.product)">-</button>
+      {{product.amount}}
+      <button (click)="addToCart(product.product)" class="add-button">+</button>
+
+      <div>
+        <p>Preis {{product.product.price.toFixed(2)}}</p>
+      </div>
+      <div>
+        <p>Total {{product.total.toFixed(2)}}</p>
+      </div>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+
+    <mat-list-item class="total-item" (click)="confirm()">
+      Kauf bestätigen {{sumCHF.toFixed(2)}} CHF
+    </mat-list-item>
+
+    <mat-divider></mat-divider>
+
+  </mat-list>
+</div>
