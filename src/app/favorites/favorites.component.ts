@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {FavoriteService} from '../services/favorite.service';
 import {AuthService} from '../_core/auth.service';
 import {Product} from '../models/product';
@@ -13,6 +13,7 @@ import {Router} from '@angular/router';
 export class FavoritesComponent implements OnInit {
 
   favorites: Product[] = [];
+  innerWidth: any;
 
   constructor(private favoriteService: FavoriteService,
               private authService: AuthService,
@@ -21,6 +22,7 @@ export class FavoritesComponent implements OnInit {
   }
 
   async ngOnInit() {
+    this.innerWidth = window.innerWidth;
     await this.loadFavorites();
   }
 
@@ -41,5 +43,10 @@ export class FavoritesComponent implements OnInit {
 
   openProductDetails(product: Product) {
     this.router.navigateByUrl('/product-detail', {state: {data: {product: product}}});
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.innerWidth = window.innerWidth;
   }
 }
