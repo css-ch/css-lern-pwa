@@ -1,35 +1,37 @@
 <app-back-nav pageTitle="Checkout" pageIcon="check_circle">></app-back-nav>
 
-<div class="content-wrapper">
+<div class="checkout-wrapper">
+  <div class="content-wrapper">
 
-  <h1>Checkout</h1>
+    <h1>Checkout</h1>
 
-  <div class="address-wrapper">
-    <h3>Lieferadresse</h3>
-    <p>{{personalData.address}}</p>
-    <p>{{personalData.postcode}} {{personalData.city}}</p>
-  </div>
+    <div class="address-wrapper">
+      <h3>Lieferadresse</h3>
+      <p>{{personalData.address}}</p>
+      <p>{{personalData.postcode}} {{personalData.city}}</p>
+    </div>
 
-  <div class="payment-wrapper">
-    <h3>Zahlungsmethode</h3>
-    <mat-form-field>
-      <mat-label>Zahlungsmethode</mat-label>
-      <mat-select>
-        <mat-option value="Rechnung">
-          Rechnung
-        </mat-option>
-        <mat-option value="Kreditkarte">
-          Kreditkarte
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
+    <div class="payment-wrapper">
+      <h3>Zahlungsmethode</h3>
+      <mat-form-field>
+        <mat-label>Zahlungsmethode</mat-label>
+        <mat-select>
+          <mat-option value="Rechnung">
+            Rechnung
+          </mat-option>
+          <mat-option value="Kreditkarte">
+            Kreditkarte
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
 
-  <div class="sum-wrapper">
-    <h3>Gesamtbetrag</h3>
-    <p class="amount-to-pay">{{sum.toFixed(2)}} CHF</p>
+    <div class="sum-wrapper">
+      <h3>Gesamtbetrag</h3>
+      <p class="amount-to-pay">{{sum.toFixed(2)}} CHF</p>
+    </div>
+
   </div>
 
 </div>
-
 <button mat-flat-button color="primary" class="checkout-button" (click)="checkout()">Bestätigen</button>

@@ -1,5 +1,6 @@
 .content-wrapper {
-  padding-left: 10px;
+  display: table;
+  margin: 0 auto;
 }
 
 .payment-wrapper {
@@ -12,4 +13,8 @@
   position: absolute;
   bottom: 0;
   height: 7%;
+}
+
+.checkout-wrapper {
+  width: 100%;
 }
