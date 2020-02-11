@@ -1,8 +1,53 @@
-.registration-input {
-  width: calc(100% - 40px) !important;
-  margin-left: 20px;
+@media screen and (min-width: 768px) {
+  .registration-input {
+    width: calc(100% - 50%) !important;
+    margin-left: 25%;
+  }
+
+  .buttons-userdata {
+    margin-left: 25%;
+  }
+
+  .buttons-personal-data {
+    margin-left: 25%;
+  }
+
+  .info-div {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .registration-input {
+    width: calc(100% - 40px) !important;
+    margin-left: 20px;
+  }
+
+  .buttons-userdata {
+    margin-left: 20px;
+  }
+
+  .buttons-personal-data {
+    margin-left: 20px;
+  }
 }
 
 .next-button {
   margin-right: 20px;
+}
+
+.finish-button {
+  margin-right: 20px;
+}
+
+::ng-deep .mat-horizontal-stepper-header-container {
+  background-image: linear-gradient(#6a1b9a, #12005e) !important;
+}
+
+::ng-deep .mat-step-header .mat-step-label.mat-step-label-active {
+  color: white;
+}
+
+::ng-deep .mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
+  background-color: #9575cd;
 }
