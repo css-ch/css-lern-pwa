@@ -31,8 +31,9 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {ChangeUsernameComponent} from './change-username/change-username.component';
 import {ProductDetailComponent} from './product-detail/product-detail.component';
 import {HttpInterceptorService} from './http-interceptor.service';
-import { CheckoutComponent } from './checkout/checkout.component';
-import { CheckoutLoadingComponent } from './checkout-loading/checkout-loading.component';
+import {CheckoutComponent} from './checkout/checkout.component';
+import {CheckoutLoadingComponent} from './checkout-loading/checkout-loading.component';
+import {ButtonComponent} from './components/button/button.component';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyBYlCWINMXHIIpZ94hq4nSAA9WQoFLhXlU',
@@ -57,6 +58,7 @@ export const firebaseConfig = {
     ShoppingCartComponent,
     NavComponent,
     ToolbarComponent,
+    ButtonComponent,
     LogoutSpinnerComponent,
     PersonalDataComponent,
     BackNavComponent,
@@ -65,6 +67,7 @@ export const firebaseConfig = {
     ProductDetailComponent,
     CheckoutComponent,
     CheckoutLoadingComponent,
+    ButtonComponent,
   ],
   imports: [
     HttpClientModule,

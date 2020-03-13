@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {
+  MatAutocompleteModule,
   MatBadgeModule,
   MatButtonModule,
   MatButtonToggleModule,
@@ -43,6 +44,7 @@ import {
     MatFormFieldModule,
     MatInputModule,
     MatSortModule,
+    MatAutocompleteModule,
     MatDialogModule,
     MatSelectModule,
     MatExpansionModule,
@@ -60,6 +62,7 @@ import {
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatAutocompleteModule,
     MatIconModule,
     MatSidenavModule,
     MatSlideToggleModule,

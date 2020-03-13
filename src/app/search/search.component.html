@@ -1,7 +1,7 @@
 <app-toolbar></app-toolbar>
-
-<button mat-raised-button color="primary" class="all-products-button" (click)="searchAllProducts()">Alle Produkte
-</button>
+<div class="all-products-button">
+  <app-button (click)="searchAllProducts()" text="Alle Produkte"></app-button>
+</div>
 
 <mat-accordion>
   <mat-expansion-panel [expanded]="true" class="product-search-panel">
@@ -15,9 +15,15 @@
     </mat-expansion-panel-header>
     <div class="produktsuche-wrapper">
       <mat-form-field class="search-input">
-        <input matInput placeholder="Produkt" name="product" [(ngModel)]="searchName">
+        <input matInput placeholder="Produkt" name="product" [(ngModel)]="searchName" [formControl]="myControl"
+               [matAutocomplete]="auto">
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option.name">
+            {{option.name}}
+          </mat-option>
+        </mat-autocomplete>
       </mat-form-field>
-      <button mat-raised-button color="primary" class="search-button" (click)="searchWithName()">Suchen</button>
+      <app-button class="search-button" (click)="searchWithName()" text="Suchen"></app-button>
     </div>
   </mat-expansion-panel>
 
@@ -75,9 +81,7 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
-
-      <button mat-raised-button color="primary" class="search-button" (click)="searchWithTypeBrandName()">Suchen
-      </button>
+      <app-button class="search-button" (click)="searchWithTypeBrandName()" text="Suchen"></app-button>
     </div>
   </mat-expansion-panel>
 </mat-accordion>

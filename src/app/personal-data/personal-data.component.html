@@ -32,5 +32,7 @@
     </mat-list-item>
     <mat-divider></mat-divider>
   </div>
-  <button mat-flat-button color="primary" class="save-button" (click)="changePersonalData()">Speichern</button>
+  <div class="save-button">
+    <app-button text="Speichern" (click)="changePersonalData()"></app-button>
+  </div>
 </mat-list>
