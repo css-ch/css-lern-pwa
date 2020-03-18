@@ -5,14 +5,27 @@ import {ToastService} from '../../services/toast.service';
 import {ShoppingCartService} from '../../services/shopping-cart.service';
 import {Product} from '../../models/product';
 import {SizeServiceService} from '../../services/size-service.service';
+import {animate, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
-  styleUrls: ['./toolbar.component.scss']
+  styleUrls: ['./toolbar.component.scss'],
+  animations: [
+    trigger('added', [
+      state('notAdded', style({})),
+      state('added', style({transform: 'rotateY(360deg)'})),
+      transition('notAdded => added', [
+        animate('0.5s')
+      ]),
+      transition('added => notAdded', [
+        animate('0.5s')
+      ]),
+    ])
+  ]
 })
 export class ToolbarComponent implements OnInit {
-
+  public isAdded = true;
   public priceSum = 0;
   public shoppingCart: Product[];
 
@@ -32,6 +45,10 @@ export class ToolbarComponent implements OnInit {
   async ngOnInit() {
     this.shoppingCartService.shoppingCartState$.subscribe(async () => {
       await this.updateShoppingCart();
+      this.isAdded = false;
+      setTimeout(() => {
+        this.isAdded = true;
+      }, 1000);
     });
     await this.updateShoppingCart();
   }

@@ -34,6 +34,7 @@ import {HttpInterceptorService} from './http-interceptor.service';
 import {CheckoutComponent} from './checkout/checkout.component';
 import {CheckoutLoadingComponent} from './checkout-loading/checkout-loading.component';
 import {ButtonComponent} from './components/button/button.component';
+import {CreditCardDirectivesModule} from 'angular-cc-library';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyBYlCWINMXHIIpZ94hq4nSAA9WQoFLhXlU',
@@ -75,6 +76,7 @@ export const firebaseConfig = {
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    CreditCardDirectivesModule,
     MaterialModule,
     ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
     BrowserAnimationsModule,

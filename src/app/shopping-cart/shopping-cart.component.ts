@@ -32,6 +32,7 @@ export class ShoppingCartComponent implements OnInit {
 
   private distinctProducts() {
     let currentProductName = '';
+    const result = [];
     for (const product of this.allProducts) {
 
       currentProductName = product.name;
@@ -50,9 +51,9 @@ export class ShoppingCartComponent implements OnInit {
         total: product.price * count
       };
 
-      this.productsInCartDistinct.push(productInCart);
-
+      result.push(productInCart);
     }
+    this.productsInCartDistinct = result;
   }
 
   private removeNonBuyedItems(productList: Array<ProductInCart>) {
@@ -84,13 +85,11 @@ export class ShoppingCartComponent implements OnInit {
 
   async addToCart(product: Product) {
     await this.shoppingCartService.addProductToShoppingCart(product);
-    this.productsInCartDistinct = [];
     await this.loadData();
   }
 
   async removeFromCart(product: Product) {
     await this.shoppingCartService.removeProductFromShoppingCart(product);
-    this.productsInCartDistinct = [];
     await this.loadData();
   }
 

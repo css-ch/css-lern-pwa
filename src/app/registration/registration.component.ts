@@ -16,6 +16,7 @@ import {PersonalDataService} from '../services/personal.data.service';
 export class RegistrationComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
+  thirdFormGroup: FormGroup;
   userdata: User = {email: '', password: '', displayname: ''};
   personalData: PersonalData = {fullname: '', address: '', postcode: '', city: '', uid: ''};
   userListRef: AngularFireList<PersonalData>;
@@ -35,10 +36,13 @@ export class RegistrationComponent implements OnInit {
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
     });
+    this.thirdFormGroup = this._formBuilder.group({
+      thirdCtrl: ['', Validators.required]
+    });
   }
 
   public registerUser() {
-    if (this.firstFormGroup.valid && this.secondFormGroup.valid) {
+    if (this.firstFormGroup.valid && this.secondFormGroup.valid && this.thirdFormGroup.valid) {
       this.authService.createUserWithEmailAndPassword(this.userdata).then(() => {
         this.personalData.uid = this.authService.getCurrentUserUid();
         this.personalDataService.createPersonalData(this.personalData);

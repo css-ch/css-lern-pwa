@@ -43,6 +43,30 @@
       </mat-form-field>
       <div class="buttons-personal-data">
         <button mat-raised-button color="primary" matStepperPrevious class="finish-button">Zurück</button>
+        <button mat-raised-button color="primary" matStepperNext class="next-button">Weiter</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="thirdFormGroup">
+    <form [formGroup]="thirdFormGroup">
+      <ng-template matStepLabel>Kreditkarte</ng-template>
+      <div class="info-div">
+        <p>Um Käufe machen zu können, musst du deine Kreditkartendaten eingeben.</p>
+      </div>
+      <mat-form-field class="registration-input">
+        <input matInput placeholder="Kreditkartennummer" formControlName="thirdCtrl" required id="cc-number" type="tel"
+               autocomplete="cc-number" ccNumber>
+      </mat-form-field>
+      <mat-form-field class="registration-input">
+        <input matInput placeholder="CVC" formControlName="thirdCtrl" required id="cc-cvc" type="tel"
+               autocomplete="cc-cvc" ccCVC>
+      </mat-form-field>
+      <mat-form-field class="registration-input">
+        <input matInput placeholder="Ablaufsdatum (MM/YY)" formControlName="thirdCtrl" required id="cc-exp-date"
+               type="tel" autocomplete="cc-exp" ccExp>
+      </mat-form-field>
+      <div class="buttons-personal-data">
+        <button mat-raised-button color="primary" matStepperPrevious class="finish-button">Zurück</button>
         <button mat-raised-button color="primary" (click)="registerUser()" class="finish-button">Fertig</button>
       </div>
     </form>

@@ -11,6 +11,7 @@
   transition: all .55s;
   cursor: pointer;
   background-color: #6a1b9a;
+  border-radius: 3px;
 }
 
 .btn span {
@@ -25,8 +26,9 @@
   left: 0;
   width: 0;
   height: 100%;
-  background: #560071;
+  background: #4d1a7c;
   transition: all .55s;
+  border-radius: 4px;
 }
 
 .btn:hover {
