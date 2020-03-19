@@ -35,6 +35,9 @@ import {CheckoutComponent} from './checkout/checkout.component';
 import {CheckoutLoadingComponent} from './checkout-loading/checkout-loading.component';
 import {ButtonComponent} from './components/button/button.component';
 import {CreditCardDirectivesModule} from 'angular-cc-library';
+import {PaymentOverviewComponent} from './payment-overview/payment-overview.component';
+import {FaIconLibrary, FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {faArrowRight} from '@fortawesome/free-solid-svg-icons/faArrowRight';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyBYlCWINMXHIIpZ94hq4nSAA9WQoFLhXlU',
@@ -69,6 +72,7 @@ export const firebaseConfig = {
     CheckoutComponent,
     CheckoutLoadingComponent,
     ButtonComponent,
+    PaymentOverviewComponent,
   ],
   imports: [
     HttpClientModule,
@@ -77,6 +81,7 @@ export const firebaseConfig = {
     ReactiveFormsModule,
     FormsModule,
     CreditCardDirectivesModule,
+    FontAwesomeModule,
     MaterialModule,
     ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
     BrowserAnimationsModule,
@@ -95,4 +100,7 @@ export const firebaseConfig = {
   bootstrap: [AppComponent]
 })
 export class AppModule {
+  constructor(private library: FaIconLibrary) {
+    library.addIcons(faArrowRight);
+  }
 }

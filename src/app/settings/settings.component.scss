@@ -17,3 +17,11 @@
   position: absolute;
   right: 20px;
 }
+
+mat-list-item {
+  cursor: pointer;
+
+  &:hover {
+    background-color: #c8c8c8;
+  }
+}

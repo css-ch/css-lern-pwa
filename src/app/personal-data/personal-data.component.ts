@@ -12,7 +12,7 @@ import {Router} from '@angular/router';
 })
 export class PersonalDataComponent implements OnInit {
 
-  public personalData: PersonalData = {fullname: '', city: '', postcode: '', address: '', uid: ''};
+  public personalData: PersonalData = {fullname: '', city: '', postcode: '', address: '', uid: '', stripeId: ''};
 
   constructor(private personalDataService: PersonalDataService,
               private authService: AuthService,

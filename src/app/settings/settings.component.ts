@@ -33,7 +33,10 @@ export class SettingsComponent implements OnInit {
   }
 
   public async registerCustomer() {
-    this.paymentService.createCustomer(await this.userService.getPersonalDataByUID(this.authService.getCurrentUserUid()),
-      this.authService.getCurrentUser());
+
+  }
+
+  public showPayments() {
+    this.router.navigateByUrl('/payment-overview');
   }
 }

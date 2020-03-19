@@ -18,7 +18,7 @@ export class RegistrationComponent implements OnInit {
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
   userdata: User = {email: '', password: '', displayname: ''};
-  personalData: PersonalData = {fullname: '', address: '', postcode: '', city: '', uid: ''};
+  personalData: PersonalData = {fullname: '', address: '', postcode: '', city: '', uid: '', stripeId: ''};
   userListRef: AngularFireList<PersonalData>;
 
   constructor(private _formBuilder: FormBuilder,

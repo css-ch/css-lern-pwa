@@ -16,6 +16,7 @@ import {LogoutSpinnerComponent} from './components/logout-spinner/logout-spinner
 import {ProductDetailComponent} from './product-detail/product-detail.component';
 import {CheckoutComponent} from './checkout/checkout.component';
 import {CheckoutLoadingComponent} from './checkout-loading/checkout-loading.component';
+import {PaymentOverviewComponent} from './payment-overview/payment-overview.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -34,6 +35,7 @@ const routes: Routes = [
   {path: 'product-detail', component: ProductDetailComponent, canActivate: [AuthGuard]},
   {path: 'checkout', component: CheckoutComponent, canActivate: [AuthGuard]},
   {path: 'checkout-loading', component: CheckoutLoadingComponent, canActivate: [AuthGuard]},
+  {path: 'payment-overview', component: PaymentOverviewComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({
