@@ -19,12 +19,19 @@ export class PaymentOverviewComponent implements OnInit {
 
   async ngOnInit() {
     this.personalDataService.getPersonalDataByUID(this.authService.getCurrentUserUid()).then(async user => {
-      this.payments = await this.paymentService.getPayments(user.stripeId);
+      this.paymentService.getPayments(user.stripeId).then((payments => {
+        this.payments = payments.data;
+      }));
     });
   }
 
   getPaymentDate(created: any) {
     const date = new Date(created * 1000);
     return `${date.getDay()}.${date.getMonth()}.${date.getFullYear()}`;
+  }
+
+  openReceipt(receipt_url: any) {
+    const receipt = window.open(receipt_url, '_blank');
+    receipt.focus();
   }
 }

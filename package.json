@@ -39,7 +39,7 @@
     "rxjs": "~6.5.3",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1",
-    "@fortawesome/angular-fontawesome": "latest"
+    "@fortawesome/angular-fontawesome": "0.5.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.6",
