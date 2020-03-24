@@ -27,7 +27,7 @@ export class PaymentOverviewComponent implements OnInit {
 
   getPaymentDate(created: any) {
     const date = new Date(created * 1000);
-    return `${date.getDay()}.${date.getMonth()}.${date.getFullYear()}`;
+    return `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`;
   }
 
   openReceipt(receipt_url: any) {
