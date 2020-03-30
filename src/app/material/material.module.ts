@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {
   MatAutocompleteModule,
   MatBadgeModule,
+  MatBottomSheetModule,
   MatButtonModule,
   MatButtonToggleModule,
   MatCardModule,
@@ -34,6 +35,7 @@ import {
     MatIconModule,
     MatButtonModule,
     MatSidenavModule,
+    MatBottomSheetModule,
     MatListModule,
     MatMenuModule,
     MatCardModule,

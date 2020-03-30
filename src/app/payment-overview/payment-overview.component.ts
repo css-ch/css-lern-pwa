@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {PaymentService} from '../services/payment.service';
 import {AuthService} from '../_core/auth.service';
 import {PersonalDataService} from '../services/personal.data.service';
+import {MatBottomSheet} from '@angular/material';
+import {BottomSheetComponent} from '../components/bottom-sheet/bottom-sheet.component';
 
 @Component({
   selector: 'app-payment-overview',
@@ -14,7 +16,8 @@ export class PaymentOverviewComponent implements OnInit {
 
   constructor(private paymentService: PaymentService,
               private authService: AuthService,
-              private personalDataService: PersonalDataService) {
+              private personalDataService: PersonalDataService,
+              private bottomSheet: MatBottomSheet) {
   }
 
   async ngOnInit() {
@@ -30,8 +33,7 @@ export class PaymentOverviewComponent implements OnInit {
     return `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`;
   }
 
-  openReceipt(receipt_url: any) {
-    const receipt = window.open(receipt_url, '_blank');
-    receipt.focus();
+  openBottomSheet() {
+    this.bottomSheet.open(BottomSheetComponent);
   }
 }

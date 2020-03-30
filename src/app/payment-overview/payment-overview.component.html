@@ -8,7 +8,7 @@
   <mat-list role="list">
     <mat-divider></mat-divider>
     <div *ngFor="let payment of payments">
-      <mat-list-item (click)="openReceipt(payment.receipt_url)">
+      <mat-list-item (click)="openBottomSheet()">
         <h4 matLine>{{getPaymentDate(payment.created)}}</h4>
         <p matLine>Betrag: {{payment.amount / 100}} CHF</p>
         <fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>

@@ -36,3 +36,8 @@ img {
 .mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary {
   background-color: rgb(0, 0, 0, 0);
 }
+
+mat-icon {
+  font-size: 24px;
+  height: inherit;
+}

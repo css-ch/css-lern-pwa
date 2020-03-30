@@ -38,6 +38,8 @@ import {CreditCardDirectivesModule} from 'angular-cc-library';
 import {PaymentOverviewComponent} from './payment-overview/payment-overview.component';
 import {FaIconLibrary, FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {faArrowRight} from '@fortawesome/free-solid-svg-icons/faArrowRight';
+import {BottomSheetComponent} from './components/bottom-sheet/bottom-sheet.component';
+import {faSignOutAlt} from '@fortawesome/free-solid-svg-icons';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyBYlCWINMXHIIpZ94hq4nSAA9WQoFLhXlU',
@@ -66,6 +68,7 @@ export const firebaseConfig = {
     LogoutSpinnerComponent,
     PersonalDataComponent,
     BackNavComponent,
+    BottomSheetComponent,
     SearchResultsComponent,
     ChangeUsernameComponent,
     ProductDetailComponent,
@@ -73,6 +76,7 @@ export const firebaseConfig = {
     CheckoutLoadingComponent,
     ButtonComponent,
     PaymentOverviewComponent,
+    BottomSheetComponent,
   ],
   imports: [
     HttpClientModule,
@@ -97,10 +101,11 @@ export const firebaseConfig = {
       multi: true
     }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [BottomSheetComponent]
 })
 export class AppModule {
   constructor(private library: FaIconLibrary) {
-    library.addIcons(faArrowRight);
+    library.addIcons(faArrowRight, faSignOutAlt);
   }
 }
