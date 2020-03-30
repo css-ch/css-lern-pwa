@@ -29,31 +29,22 @@ export class ShoppingCartComponent implements OnInit {
     await this.loadData();
   }
 
-
   private distinctProducts() {
-    let currentProductName = '';
-    const result = [];
-    for (const product of this.allProducts) {
-
-      currentProductName = product.name;
-
-      let count = 0;
-
-      for (const productCart of this.shoppingCart) {
-        if (product.name === productCart.name) {
-          count++;
+    this.productsInCartDistinct = this.shoppingCart
+      .filter(cartProduct => this.allProducts.find(product => cartProduct.name === product.name))
+      .reduce((productsInCart, product) => {
+        const existingProduct = productsInCart.find(productInCart => product.name === productInCart.name);
+        if (existingProduct) {
+          existingProduct.count += 1;
+          return productsInCart;
         }
-      }
-
-      const productInCart = {
-        product: product,
-        amount: count,
-        total: product.price * count
-      };
-
-      result.push(productInCart);
-    }
-    this.productsInCartDistinct = result;
+        const newProduct = {
+          product: product,
+          amount: 1,
+        };
+        productsInCart.push(newProduct);
+        return productsInCart;
+      }, []);
   }
 
   private removeNonBuyedItems(productList: Array<ProductInCart>) {
