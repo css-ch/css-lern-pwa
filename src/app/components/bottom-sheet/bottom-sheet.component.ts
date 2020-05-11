@@ -1,5 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, Inject} from '@angular/core';
 import {MatBottomSheetRef} from '@angular/material';
+import {MAT_BOTTOM_SHEET_DATA} from '@angular/material/bottom-sheet';
 
 @Component({
   selector: 'app-bottom-sheet',
@@ -8,11 +9,13 @@ import {MatBottomSheetRef} from '@angular/material';
 })
 export class BottomSheetComponent {
 
-  constructor(private bottomSheet: MatBottomSheetRef<BottomSheetComponent>) {
+  constructor(private bottomSheet: MatBottomSheetRef<BottomSheetComponent>,
+              @Inject(MAT_BOTTOM_SHEET_DATA) public data: any) {
   }
 
-  openReceipt(receipt_url: any) {
-    const receipt = window.open(receipt_url, '_blank');
+  openReceipt() {
+    console.log(this.data);
+    const receipt = window.open(this.data.receipt_url, '_blank');
     receipt.focus();
   }
 

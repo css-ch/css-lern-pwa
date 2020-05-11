@@ -33,7 +33,11 @@ export class PaymentOverviewComponent implements OnInit {
     return `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`;
   }
 
-  openBottomSheet() {
-    this.bottomSheet.open(BottomSheetComponent);
+  openBottomSheet(receipt: string) {
+    this.bottomSheet.open(BottomSheetComponent, {
+      data: {
+        receipt_url: receipt
+      }
+    });
   }
 }
