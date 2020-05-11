@@ -4,7 +4,7 @@
 
 $css-admin-primary: mat-palette($mat-purple, 900);
 $css-admin-accent: mat-palette($mat-deep-purple, 300);
-$css-admin-warn: mat-palette($mat-deep-purple, 50);
+$css-admin-warn: mat-palette($mat-red, 900);
 
 $css-admin-theme: mat-light-theme($css-admin-primary, $css-admin-accent, $css-admin-warn);
 $css-typography: mat-typography-config(

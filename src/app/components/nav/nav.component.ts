@@ -20,6 +20,9 @@ export class NavComponent implements OnInit {
   }
 
   async ngOnInit() {
+    this.favoriteService.favoriteState$.subscribe(async () => {
+      this.favoriteCount = await this.favoriteService.getFavoriteCountByUuid(this.authService.getCurrentUserUid());
+    });
     this.favoriteCount = await this.favoriteService.getFavoriteCountByUuid(this.authService.getCurrentUserUid());
   }
 

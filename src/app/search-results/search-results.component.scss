@@ -29,3 +29,18 @@ p {
   background: linear-gradient(rgb(106, 27, 154, 0.40), rgb(18, 0, 94, 0.90)) !important;
 }
 
+::ng-deep .mat-grid-tile {
+  cursor: pointer;
+}
+
+img {
+  transition: transform .8s ease, filter .8s ease;
+}
+
+img:hover {
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1);
+  filter: grayscale(70%);
+}
+

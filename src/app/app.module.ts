@@ -31,8 +31,15 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {ChangeUsernameComponent} from './change-username/change-username.component';
 import {ProductDetailComponent} from './product-detail/product-detail.component';
 import {HttpInterceptorService} from './http-interceptor.service';
-import { CheckoutComponent } from './checkout/checkout.component';
-import { CheckoutLoadingComponent } from './checkout-loading/checkout-loading.component';
+import {CheckoutComponent} from './checkout/checkout.component';
+import {CheckoutLoadingComponent} from './checkout-loading/checkout-loading.component';
+import {ButtonComponent} from './components/button/button.component';
+import {CreditCardDirectivesModule} from 'angular-cc-library';
+import {PaymentOverviewComponent} from './payment-overview/payment-overview.component';
+import {FaIconLibrary, FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {faArrowRight} from '@fortawesome/free-solid-svg-icons/faArrowRight';
+import {BottomSheetComponent} from './components/bottom-sheet/bottom-sheet.component';
+import {faSignOutAlt} from '@fortawesome/free-solid-svg-icons';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyBYlCWINMXHIIpZ94hq4nSAA9WQoFLhXlU',
@@ -57,14 +64,19 @@ export const firebaseConfig = {
     ShoppingCartComponent,
     NavComponent,
     ToolbarComponent,
+    ButtonComponent,
     LogoutSpinnerComponent,
     PersonalDataComponent,
     BackNavComponent,
+    BottomSheetComponent,
     SearchResultsComponent,
     ChangeUsernameComponent,
     ProductDetailComponent,
     CheckoutComponent,
     CheckoutLoadingComponent,
+    ButtonComponent,
+    PaymentOverviewComponent,
+    BottomSheetComponent,
   ],
   imports: [
     HttpClientModule,
@@ -72,6 +84,8 @@ export const firebaseConfig = {
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    CreditCardDirectivesModule,
+    FontAwesomeModule,
     MaterialModule,
     ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
     BrowserAnimationsModule,
@@ -87,7 +101,11 @@ export const firebaseConfig = {
       multi: true
     }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [BottomSheetComponent]
 })
 export class AppModule {
+  constructor(private library: FaIconLibrary) {
+    library.addIcons(faArrowRight, faSignOutAlt);
+  }
 }

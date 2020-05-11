@@ -7,6 +7,7 @@ import {PersonalData} from '../models/personal-data';
 import {ToastService} from '../services/toast.service';
 import {AngularFireDatabase, AngularFireList} from '@angular/fire/database';
 import {PersonalDataService} from '../services/personal.data.service';
+import {PaymentService} from '../services/payment.service';
 
 @Component({
   selector: 'app-registration',
@@ -16,8 +17,9 @@ import {PersonalDataService} from '../services/personal.data.service';
 export class RegistrationComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
+  thirdFormGroup: FormGroup;
   userdata: User = {email: '', password: '', displayname: ''};
-  personalData: PersonalData = {fullname: '', address: '', postcode: '', city: '', uid: ''};
+  personalData: PersonalData = {fullname: '', address: '', postcode: '', city: '', uid: '', stripeId: ''};
   userListRef: AngularFireList<PersonalData>;
 
   constructor(private _formBuilder: FormBuilder,
@@ -25,7 +27,8 @@ export class RegistrationComponent implements OnInit {
               private authService: AuthService,
               private toastService: ToastService,
               private afDb: AngularFireDatabase,
-              private personalDataService: PersonalDataService) {
+              private personalDataService: PersonalDataService,
+              private paymentService: PaymentService) {
   }
 
   ngOnInit() {
@@ -35,13 +38,19 @@ export class RegistrationComponent implements OnInit {
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
     });
+    this.thirdFormGroup = this._formBuilder.group({
+      thirdCtrl: ['', Validators.required]
+    });
   }
 
   public registerUser() {
-    if (this.firstFormGroup.valid && this.secondFormGroup.valid) {
+    if (this.firstFormGroup.valid && this.secondFormGroup.valid && this.thirdFormGroup.valid) {
       this.authService.createUserWithEmailAndPassword(this.userdata).then(() => {
         this.personalData.uid = this.authService.getCurrentUserUid();
-        this.personalDataService.createPersonalData(this.personalData);
+        this.personalDataService.createPersonalData(this.personalData).then(async () => {
+          this.paymentService.createCustomer(await this.personalDataService.getPersonalDataByUID(this.personalData.uid),
+            this.authService.getCurrentUser());
+        });
 
       });
     } else {

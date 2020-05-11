@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthService} from '../_core/auth.service';
+import {PaymentService} from '../services/payment.service';
+import {PersonalDataService} from '../services/personal.data.service';
 
 @Component({
   selector: 'app-settings',
@@ -10,7 +12,9 @@ import {AuthService} from '../_core/auth.service';
 export class SettingsComponent implements OnInit {
 
   constructor(private router: Router,
-              private authService: AuthService) {
+              private authService: AuthService,
+              private paymentService: PaymentService,
+              private userService: PersonalDataService) {
   }
 
   ngOnInit() {
@@ -26,5 +30,13 @@ export class SettingsComponent implements OnInit {
 
   public changePersonalData() {
     this.router.navigateByUrl('/personal-data');
+  }
+
+  public async registerCustomer() {
+
+  }
+
+  public showPayments() {
+    this.router.navigateByUrl('/payment-overview');
   }
 }

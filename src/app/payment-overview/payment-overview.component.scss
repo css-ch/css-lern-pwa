@@ -1,28 +1,25 @@
 @media screen and (min-width: 750px) {
-  .settings-wrapper {
+  .payments-wrapper {
     width: 50%;
     margin-left: 25%;
   }
 }
 
 @media screen and (max-width: 749px) {
-  .settings-wrapper {
+  .payments-wrapper {
     width: calc(100% - 40px);
     margin-left: 20px;
   }
 }
 
+fa-icon {
+  color: #6a1b9a;
+}
 
-.push-toggle {
-  position: absolute;
-  right: 20px;
+p {
+  text-align: justify;
 }
 
 mat-list-item {
   cursor: pointer;
-  transition: background-color .5s ease-in-out;
-
-  &:hover {
-    background-color: #c8c8c8;
-  }
 }

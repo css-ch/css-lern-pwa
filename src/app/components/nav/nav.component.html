@@ -1,25 +1,26 @@
 <div class="navigation-wrapper" *ngIf="sizeService.getIsPhone()">
   <div class="navigation">
     <button mat-button [routerLink]="['/home']">
-      <mat-icon>home</mat-icon>
+      <mat-icon fontIcon="fa-home" fontSet="fas"></mat-icon>
     </button>
   </div>
 
   <div class="navigation">
     <button mat-button [routerLink]="['/search']">
-      <mat-icon>search</mat-icon>
+      <mat-icon fontSet="fas" fontIcon="fa-search"></mat-icon>
     </button>
   </div>
 
   <div class="navigation">
     <button mat-button [routerLink]="['/favorites']">
-      <mat-icon [matBadge]="favoriteCount" matBadgeColor="warn" matBadgeOverlap="false">favorite_border</mat-icon>
+      <mat-icon [matBadge]="favoriteCount" matBadgeColor="warn" matBadgeOverlap="false" fontSet="far"
+                fontIcon="fa-heart"></mat-icon>
     </button>
   </div>
 
   <div class="navigation">
     <button mat-button [routerLink]="['/settings']">
-      <mat-icon>build</mat-icon>
+      <mat-icon fontIcon="fa-cog" fontSet="fas"></mat-icon>
     </button>
   </div>
 </div>

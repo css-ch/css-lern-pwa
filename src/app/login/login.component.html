@@ -13,9 +13,13 @@
                name="password">
       </mat-form-field>
       <br>
-      <button mat-raised-button color="primary" class="login-button" (click)="login()">Einloggen</button>
+      <div class="login-button">
+        <app-button text="Einloggen" (click)="login()"></app-button>
+      </div>
     </form>
-    <button mat-raised-button color="primary" [routerLink]="['/registration']" class="register">Registrieren</button>
+    <div class="register">
+      <app-button text="Registrieren" (click)="register()"></app-button>
+    </div>
   </div>
 
   <footer class="footer">

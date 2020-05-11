@@ -29,30 +29,22 @@ export class ShoppingCartComponent implements OnInit {
     await this.loadData();
   }
 
-
   private distinctProducts() {
-    let currentProductName = '';
-    for (const product of this.allProducts) {
-
-      currentProductName = product.name;
-
-      let count = 0;
-
-      for (const productCart of this.shoppingCart) {
-        if (product.name === productCart.name) {
-          count++;
+    this.productsInCartDistinct = this.shoppingCart
+      .filter(cartProduct => this.allProducts.find(product => cartProduct.name === product.name))
+      .reduce((productsInCart, product) => {
+        const existingProduct = productsInCart.find(productInCart => product.name === productInCart.name);
+        if (existingProduct) {
+          existingProduct.count += 1;
+          return productsInCart;
         }
-      }
-
-      const productInCart = {
-        product: product,
-        amount: count,
-        total: product.price * count
-      };
-
-      this.productsInCartDistinct.push(productInCart);
-
-    }
+        const newProduct = {
+          product: product,
+          amount: 1,
+        };
+        productsInCart.push(newProduct);
+        return productsInCart;
+      }, []);
   }
 
   private removeNonBuyedItems(productList: Array<ProductInCart>) {
@@ -84,13 +76,11 @@ export class ShoppingCartComponent implements OnInit {
 
   async addToCart(product: Product) {
     await this.shoppingCartService.addProductToShoppingCart(product);
-    this.productsInCartDistinct = [];
     await this.loadData();
   }
 
   async removeFromCart(product: Product) {
     await this.shoppingCartService.removeProductFromShoppingCart(product);
-    this.productsInCartDistinct = [];
     await this.loadData();
   }
 
