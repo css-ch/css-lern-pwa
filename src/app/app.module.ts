@@ -40,6 +40,7 @@ import {FaIconLibrary, FontAwesomeModule} from '@fortawesome/angular-fontawesome
 import {faArrowRight} from '@fortawesome/free-solid-svg-icons/faArrowRight';
 import {BottomSheetComponent} from './components/bottom-sheet/bottom-sheet.component';
 import {faSignOutAlt} from '@fortawesome/free-solid-svg-icons';
+import { ProductGridComponent } from './components/product-grid/product-grid.component';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyBYlCWINMXHIIpZ94hq4nSAA9WQoFLhXlU',
@@ -77,6 +78,7 @@ export const firebaseConfig = {
     ButtonComponent,
     PaymentOverviewComponent,
     BottomSheetComponent,
+    ProductGridComponent,
   ],
   imports: [
     HttpClientModule,
