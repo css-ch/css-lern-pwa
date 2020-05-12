@@ -1,12 +1,12 @@
 <app-back-nav pageTitle="Persönliche Daten" pageIcon="edit"></app-back-nav>
 
-<div class="form-wrapper">
+<div class="container">
   <div class="text-wrapper">
     <p>Dies sind deine Persönlichen Daten. Bitte beachte, dass diese Daten vollständig und korrekt sein müssen</p>
   </div>
 </div>
 <mat-list>
-  <div class="form-wrapper">
+  <div class="container">
     <mat-list-item class="personal-data-item">
       <mat-form-field class="personal-data-input">
         <input matInput placeholder="Voller Name" [(ngModel)]="personalData.fullname">
@@ -32,7 +32,7 @@
     </mat-list-item>
     <mat-divider></mat-divider>
   </div>
-  <div class="save-button">
+  <div class="container save-button">
     <app-button text="Speichern" (click)="changePersonalData()"></app-button>
   </div>
 </mat-list>

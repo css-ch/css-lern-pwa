@@ -1,10 +1,10 @@
 <app-toolbar></app-toolbar>
-<div class="all-products-button">
+<div class="all-products-button container">
   <app-button (click)="searchAllProducts()" text="Alle Produkte"></app-button>
 </div>
 
 <mat-accordion>
-  <mat-expansion-panel [expanded]="true" class="product-search-panel">
+  <mat-expansion-panel [expanded]="true" class="container">
     <mat-expansion-panel-header>
       <mat-panel-title>
         Produktsuche
@@ -27,7 +27,7 @@
     </div>
   </mat-expansion-panel>
 
-  <mat-expansion-panel class="overall-search-panel">
+  <mat-expansion-panel class="container">
     <mat-expansion-panel-header>
       <mat-panel-title>
         Allgemeine Suche

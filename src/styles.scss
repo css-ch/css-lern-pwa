@@ -32,3 +32,23 @@ body {
   width: 100%;
 }
 
+// mobile
+@media screen and (min-width: 660px) {
+  .container {
+    width: 50%;
+    margin-left: 25% !important;
+  }
+}
+
+// tablet
+@media screen and (max-width: 749px) {
+  // Todo: Create container for tablet
+}
+
+// desktop
+@media screen and (min-width: 750px) {
+  .container {
+    margin-left: 25% !important;
+    width: 50%;
+  }
+}
