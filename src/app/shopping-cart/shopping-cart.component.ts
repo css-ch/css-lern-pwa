@@ -5,6 +5,7 @@ import {ProductInCart} from '../models/product-in-cart';
 import {ProductService} from '../services/product.service';
 import {ToastService} from '../services/toast.service';
 import {Router} from '@angular/router';
+import {AuthService} from '../_core/auth.service';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -18,14 +19,17 @@ export class ShoppingCartComponent implements OnInit {
   private shoppingCart: Product[] = [];
   public productsInCartDistinct: ProductInCart[] = [];
   public sumCHF = 0;
+  public authenticated: boolean;
 
   constructor(private shoppingCartService: ShoppingCartService,
               private productService: ProductService,
               private toastService: ToastService,
+              private authService: AuthService,
               private router: Router) {
   }
 
   async ngOnInit() {
+    this.authenticated = this.authService.authenticated;
     await this.loadData();
   }
 
@@ -36,11 +40,13 @@ export class ShoppingCartComponent implements OnInit {
         const existingProduct = productsInCart.find(productInCart => product.name === productInCart.product.name);
         if (existingProduct) {
           existingProduct.amount += 1;
+          existingProduct.total = existingProduct.total + existingProduct.product.price;
           return productsInCart;
         } else {
           const newProduct = {
             product: product,
             amount: 1,
+            total: product.price
           };
           productsInCart.push(newProduct);
         }

@@ -15,7 +15,7 @@
         <mat-icon class="cart-icon" [@added]="isAdded ? 'notAdded' : 'added'" fontSet="fas"
                   fontIcon="fa-shopping-cart"></mat-icon>
       </button>
-      <button mat-flat-button color="primary" class="logout-button" (click)="logout()">
+      <button mat-flat-button color="primary" class="logout-button" (click)="logout()" *ngIf="authenticated">
         <mat-icon fontIcon="fa-sign-out-alt" fontSet="fas"></mat-icon>
       </button>
     </div>
