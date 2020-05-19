@@ -29,4 +29,7 @@ export class LoginComponent implements OnInit {
     this.router.navigateByUrl('registration');
   }
 
+  public backToHome() {
+    this.router.navigateByUrl('home');
+  }
 }

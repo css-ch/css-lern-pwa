@@ -5,8 +5,9 @@
     <div class="large-device-buttons" *ngIf="!sizeService.getIsPhone()">
       <button mat-flat-button color="primary" [routerLink]="['/home']">Start</button>
       <button mat-flat-button color="primary" [routerLink]="['/search']">Suchen</button>
-      <button mat-flat-button color="primary" [routerLink]="['/favorites']">Favoriten</button>
-      <button mat-flat-button color="primary" [routerLink]="['/settings']">Einstellungen</button>
+      <button mat-flat-button color="primary" [routerLink]="['/favorites']" *ngIf="authenticated">Favoriten</button>
+      <button mat-flat-button color="primary" [routerLink]="['/settings']" *ngIf="authenticated">Einstellungen</button>
+      <button mat-flat-button color="primary" [routerLink]="['/login']" *ngIf="!authenticated">Login</button>
     </div>
     <div>
       <button mat-flat-button color="primary" class="shopping-cart-button" [routerLink]="['/shopping-cart']">

@@ -14,6 +14,7 @@ import {PersonalDataService} from '../services/personal.data.service';
 export class ProductDetailComponent implements OnInit {
 
   public product: Product = {name: '', image: '', price: 0, brand: '', color: '', id: 0, type: ''};
+  authenticated: boolean;
 
   constructor(private shoppingCartService: ShoppingCartService,
               private router: Router,
@@ -23,6 +24,7 @@ export class ProductDetailComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.authenticated = this.auth.authenticated;
     try {
       this.product = history.state.data.product;
     } catch (e) {
