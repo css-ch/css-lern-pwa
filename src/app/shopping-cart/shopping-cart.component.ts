@@ -33,16 +33,17 @@ export class ShoppingCartComponent implements OnInit {
     this.productsInCartDistinct = this.shoppingCart
       .filter(cartProduct => this.allProducts.find(product => cartProduct.name === product.name))
       .reduce((productsInCart, product) => {
-        const existingProduct = productsInCart.find(productInCart => product.name === productInCart.name);
+        const existingProduct = productsInCart.find(productInCart => product.name === productInCart.product.name);
         if (existingProduct) {
-          existingProduct.count += 1;
+          existingProduct.amount += 1;
           return productsInCart;
+        } else {
+          const newProduct = {
+            product: product,
+            amount: 1,
+          };
+          productsInCart.push(newProduct);
         }
-        const newProduct = {
-          product: product,
-          amount: 1,
-        };
-        productsInCart.push(newProduct);
         return productsInCart;
       }, []);
   }
