@@ -20,10 +20,10 @@ import {PaymentOverviewComponent} from './payment-overview/payment-overview.comp
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
+  {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'registration', component: RegistrationComponent},
-  {path: 'search', component: SearchComponent, canActivate: [AuthGuard]},
+  {path: 'search', component: SearchComponent},
   {path: 'success', component: SuccessComponent},
   {path: 'shopping-cart', component: ShoppingCartComponent, canActivate: [AuthGuard]},
   {path: 'favorites', component: FavoritesComponent, canActivate: [AuthGuard]},

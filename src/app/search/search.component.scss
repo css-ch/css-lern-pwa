@@ -1,44 +1,49 @@
-@media screen and (min-width: 580px) {
-  .all-products-button {
-    margin-top: 5px;
-    margin-bottom: 10px;
-    width: calc(100% - 40%);
-    margin-left: 20%;
-    border-radius: 0;
+@media screen and (max-width: 599px) {
+  .grid-wrapper {
+    grid-template-columns: 5% auto 5%;
+    grid-template-areas: ". all-products ." ". accordions .";
   }
-
-  .product-search-panel, .overall-search-panel {
-    margin-left: 20%;
-    width: calc(100% - 40%);
-  }
-
 }
 
-@media screen and (max-width: 579px) {
-  .all-products-button {
-    margin-top: 5px;
-    margin-bottom: 10px;
-    width: 100%;
-    border-radius: 0;
+@media screen and (min-width: 600px) {
+  .grid-wrapper {
+    grid-template-columns: 15% 5% auto 5% 15%;
+    grid-template-areas: ". all-products all-products all-products ." ". accordions accordions accordions .";
   }
+}
+
+@media screen and (min-width: 840px) {
+  .grid-wrapper {
+    grid-template-columns: 25% 10% auto 10% 25%;
+    grid-template-areas: ". all-products all-products all-products ." ". accordions accordions accordions .";
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .grid-wrapper {
+    grid-template-columns: 30% 10% auto 10% 30%;
+    grid-template-areas: ". all-products all-products all-products ." ". accordions accordions accordions .";
+  }
+}
+
+.grid-wrapper {
+  display: grid;
+  grid-template-rows: auto;
 }
 
 .search-input, .search-button {
   width: 100%;
 }
 
-.produktsuche-wrapper, .allgemeine-suche-wrapper {
-  width: calc(100% - 40px);
-  margin-left: 20px;
+.all-products-button {
+  grid-area: all-products;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
-.product-search-panel {
-  margin-bottom: 10px;
+.search-accordions {
+  grid-area: accordions;
 }
 
-mat-divider {
-  margin-top: 20px;
-  margin-bottom: 18px;
-}
 
 

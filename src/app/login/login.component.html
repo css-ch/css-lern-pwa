@@ -1,29 +1,30 @@
 <div class="body-wrapper">
-  <div class="logo-wrapper">
-    <img src="../../assets/img/icons/icon-128.png" alt="logo">
-  </div>
-  <div class="login-form-wrapper">
-    <form class="login-form">
-      <mat-form-field class="login-input">
-        <input matInput placeholder="Email" value="test@css.ch" [(ngModel)]="user.email" name="email">
-      </mat-form-field>
-      <br>
-      <mat-form-field class="login-input">
-        <input matInput placeholder="Password" type="password" value="12345678a" [(ngModel)]="user.password"
-               name="password">
-      </mat-form-field>
-      <br>
-      <div class="login-button">
-        <app-button text="Einloggen" (click)="login()"></app-button>
-      </div>
-    </form>
-    <div class="register">
-      <app-button text="Registrieren" (click)="register()"></app-button>
+  <div class="grid-wrapper">
+    <div class="logo-wrapper">
+      <img src="../../assets/img/icons/icon-128.png" alt="logo">
     </div>
+    <div class="login-form-wrapper">
+      <form class="login-form">
+        <mat-form-field class="login-input">
+          <input matInput placeholder="Email" value="test@css.ch" [(ngModel)]="user.email" name="email">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="login-input">
+          <input matInput placeholder="Password" type="password" value="12345678a" [(ngModel)]="user.password"
+                 name="password">
+        </mat-form-field>
+        <br>
+        <div class="login-button">
+          <app-button text="Einloggen" (click)="login()"></app-button>
+        </div>
+      </form>
+      <div class="register">
+        <app-button text="Registrieren" (click)="register()"></app-button>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <h5>© David Gataric</h5>
+    </footer>
   </div>
-
-  <footer class="footer">
-    <h5>© David Gataric</h5>
-  </footer>
-
 </div>
