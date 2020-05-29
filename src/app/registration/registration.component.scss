@@ -1,6 +1,6 @@
 @media screen and (min-width: 768px) {
   .registration-input {
-    width: calc(100% - 50%) !important;
+    width: 50% !important;
     margin-left: 25%;
   }
 
@@ -18,7 +18,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  .registration-input {
+  .container {
     width: calc(100% - 40px) !important;
     margin-left: 20px;
   }

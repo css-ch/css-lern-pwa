@@ -1,12 +1,5 @@
-@media screen and (min-width: 750px) {
-  .payments-wrapper {
-    width: 50%;
-    margin-left: 25%;
-  }
-}
-
 @media screen and (max-width: 749px) {
-  .payments-wrapper {
+  .container {
     width: calc(100% - 40px);
     margin-left: 20px;
   }

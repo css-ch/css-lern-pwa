@@ -2,16 +2,8 @@
   .all-products-button {
     margin-top: 5px;
     margin-bottom: 10px;
-    width: calc(100% - 40%);
-    margin-left: 20%;
     border-radius: 0;
   }
-
-  .product-search-panel, .overall-search-panel {
-    margin-left: 20%;
-    width: calc(100% - 40%);
-  }
-
 }
 
 @media screen and (max-width: 579px) {
