@@ -6,15 +6,19 @@
     <h3>{{product.price.toFixed(2)}} Fr.</h3>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button class="show-product-button" (click)="showProduct()">Anzeigen</button>
-    <button mat-button class="make-favorite-button" (click)="toggleFavorite()">
+    <button mat-flat-button color="primary" class="show-product-button" (click)="showProduct()">Anzeigen</button>
+    <button mat-flat-button color="primary" class="make-favorite-button" (click)="toggleFavorite()"
+            [disabled]="!currentUser">
       <mat-icon>favorite_border</mat-icon>
     </button>
   </mat-card-actions>
 </mat-card>
 <mat-divider></mat-divider>
-<div class="user-info-wrapper">
+<div class="user-info-wrapper" *ngIf="currentUser">
   <h3>Momentaner Benutzer</h3>
   <p class="title" *ngIf="currentUser">Hallo {{currentUser.displayName}}</p>
+</div>
+<div class="user-info-wrapper" *ngIf="!currentUser">
+  <h3>Sie sind nicht angemeldet!</h3>
 </div>
 <app-nav></app-nav>

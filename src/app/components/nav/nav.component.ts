@@ -12,6 +12,7 @@ import {SizeServiceService} from '../../services/size-service.service';
 export class NavComponent implements OnInit {
 
   favoriteCount: number;
+  authenticated: boolean;
 
   constructor(private authService: AuthService,
               private router: Router,
@@ -20,6 +21,7 @@ export class NavComponent implements OnInit {
   }
 
   async ngOnInit() {
+    this.authenticated = this.authService.authenticated;
     this.favoriteService.favoriteState$.subscribe(async () => {
       this.favoriteCount = await this.favoriteService.getFavoriteCountByUuid(this.authService.getCurrentUserUid());
     });

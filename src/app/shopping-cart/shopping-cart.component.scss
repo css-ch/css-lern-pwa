@@ -8,6 +8,12 @@
 .total-item {
   background-image: linear-gradient(#6a1b9a, #12005e);
   color: white;
+  cursor: pointer;
+}
+
+.total-item-unauthorized {
+  background-image: linear-gradient(#b8b8b8, #999999);
+  color: black;
 }
 
 h4 {

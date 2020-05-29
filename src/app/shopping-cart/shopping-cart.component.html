@@ -25,8 +25,12 @@
       <mat-divider></mat-divider>
     </mat-list-item>
 
-    <mat-list-item class="total-item" (click)="confirm()">
+    <mat-list-item class="total-item" (click)="confirm()" *ngIf="authenticated">
       Kauf bestätigen {{sumCHF.toFixed(2)}} CHF
+    </mat-list-item>
+
+    <mat-list-item class="total-item-unauthorized" *ngIf="!authenticated">
+      Kauf nicht möglich bitte logge dich ein
     </mat-list-item>
 
     <mat-divider></mat-divider>

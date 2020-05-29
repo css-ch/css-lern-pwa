@@ -9,10 +9,13 @@
 }
 
 .make-favorite-button {
-  width: 20%;
+  width: calc(20% - 15px);
+  margin-left: 15px;
   display: inline-block;
-  position: absolute;
-  right: 0;
+}
+
+::ng-deep .mat-card-actions {
+  text-align: left;
 }
 
 img {

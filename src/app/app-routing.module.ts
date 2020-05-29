@@ -8,7 +8,6 @@ import {SuccessComponent} from './success/success.component';
 import {ShoppingCartComponent} from './shopping-cart/shopping-cart.component';
 import {FavoritesComponent} from './favorites/favorites.component';
 import {SettingsComponent} from './settings/settings.component';
-import {AuthGuard} from './_core/auth.guard';
 import {PersonalDataComponent} from './personal-data/personal-data.component';
 import {SearchResultsComponent} from './search-results/search-results.component';
 import {ChangeUsernameComponent} from './change-username/change-username.component';
@@ -19,23 +18,23 @@ import {CheckoutLoadingComponent} from './checkout-loading/checkout-loading.comp
 import {PaymentOverviewComponent} from './payment-overview/payment-overview.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'login', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
+  {path: '', component: HomeComponent, pathMatch: 'full'},
+  {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'registration', component: RegistrationComponent},
-  {path: 'search', component: SearchComponent, canActivate: [AuthGuard]},
+  {path: 'search', component: SearchComponent},
   {path: 'success', component: SuccessComponent},
-  {path: 'shopping-cart', component: ShoppingCartComponent, canActivate: [AuthGuard]},
-  {path: 'favorites', component: FavoritesComponent, canActivate: [AuthGuard]},
-  {path: 'settings', component: SettingsComponent, canActivate: [AuthGuard]},
-  {path: 'personal-data', component: PersonalDataComponent, canActivate: [AuthGuard]},
-  {path: 'search-results', component: SearchResultsComponent, canActivate: [AuthGuard]},
-  {path: 'change-username', component: ChangeUsernameComponent, canActivate: [AuthGuard]},
-  {path: 'logout-spinner', component: LogoutSpinnerComponent, canActivate: [AuthGuard]},
-  {path: 'product-detail', component: ProductDetailComponent, canActivate: [AuthGuard]},
-  {path: 'checkout', component: CheckoutComponent, canActivate: [AuthGuard]},
-  {path: 'checkout-loading', component: CheckoutLoadingComponent, canActivate: [AuthGuard]},
-  {path: 'payment-overview', component: PaymentOverviewComponent, canActivate: [AuthGuard]},
+  {path: 'shopping-cart', component: ShoppingCartComponent},
+  {path: 'favorites', component: FavoritesComponent},
+  {path: 'settings', component: SettingsComponent},
+  {path: 'personal-data', component: PersonalDataComponent},
+  {path: 'search-results', component: SearchResultsComponent},
+  {path: 'change-username', component: ChangeUsernameComponent},
+  {path: 'logout-spinner', component: LogoutSpinnerComponent},
+  {path: 'product-detail', component: ProductDetailComponent},
+  {path: 'checkout', component: CheckoutComponent},
+  {path: 'checkout-loading', component: CheckoutLoadingComponent},
+  {path: 'payment-overview', component: PaymentOverviewComponent},
 ];
 
 @NgModule({

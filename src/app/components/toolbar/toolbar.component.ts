@@ -28,6 +28,7 @@ export class ToolbarComponent implements OnInit {
   public isAdded = true;
   public priceSum = 0;
   public shoppingCart: Product[];
+  public authenticated: boolean;
 
   constructor(private authService: AuthService,
               private router: Router,
@@ -43,6 +44,7 @@ export class ToolbarComponent implements OnInit {
   }
 
   async ngOnInit() {
+    this.authenticated = this.authService.authenticated;
     this.shoppingCartService.shoppingCartState$.subscribe(async () => {
       await this.updateShoppingCart();
       this.isAdded = false;
