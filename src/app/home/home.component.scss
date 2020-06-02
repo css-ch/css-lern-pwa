@@ -34,8 +34,13 @@
   display: grid;
 }
 
+.newsletter-wrapper {
+  text-align: left;
+}
+
 .user-info-wrapper {
   grid-area: user;
+  text-align: left;
 }
 
 .newsletter-wrapper {
@@ -47,22 +52,20 @@
 }
 
 .show-product-button {
-  width: calc(100% - 20%);
+  width: 75%;
   display: inline-block;
 }
 
 .make-favorite-button {
-  width: 20%;
+  width: 15%;
+  margin-left: 15px;
   display: inline-block;
-  position: absolute;
-  right: 0;
+}
+
+::ng-deep .mat-card-actions {
+  text-align: left;
 }
 
 img {
   width: 50%;
 }
-
-mat-divider {
-  margin-top: 1em;
-}
-

@@ -11,16 +11,22 @@
     </button>
   </div>
 
-  <div class="navigation">
+  <div class="navigation" *ngIf="authenticated">
     <button mat-button [routerLink]="['/favorites']">
       <mat-icon [matBadge]="favoriteCount" matBadgeColor="warn" matBadgeOverlap="false" fontSet="far"
                 fontIcon="fa-heart"></mat-icon>
     </button>
   </div>
 
-  <div class="navigation">
+  <div class="navigation" *ngIf="authenticated">
     <button mat-button [routerLink]="['/settings']">
       <mat-icon fontIcon="fa-cog" fontSet="fas"></mat-icon>
+    </button>
+  </div>
+
+  <div class="navigation" *ngIf="!authenticated">
+    <button mat-button [routerLink]="['/login']">
+      <mat-icon fontSet="fas" fontIcon="fa-sign-in-alt"></mat-icon>
     </button>
   </div>
 </div>

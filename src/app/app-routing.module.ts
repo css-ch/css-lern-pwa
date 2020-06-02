@@ -19,23 +19,23 @@ import {CheckoutLoadingComponent} from './checkout-loading/checkout-loading.comp
 import {PaymentOverviewComponent} from './payment-overview/payment-overview.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'login', pathMatch: 'full'},
+  {path: '', component: HomeComponent, pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'registration', component: RegistrationComponent},
   {path: 'search', component: SearchComponent},
   {path: 'success', component: SuccessComponent},
-  {path: 'shopping-cart', component: ShoppingCartComponent, canActivate: [AuthGuard]},
-  {path: 'favorites', component: FavoritesComponent, canActivate: [AuthGuard]},
-  {path: 'settings', component: SettingsComponent, canActivate: [AuthGuard]},
-  {path: 'personal-data', component: PersonalDataComponent, canActivate: [AuthGuard]},
-  {path: 'search-results', component: SearchResultsComponent, canActivate: [AuthGuard]},
-  {path: 'change-username', component: ChangeUsernameComponent, canActivate: [AuthGuard]},
-  {path: 'logout-spinner', component: LogoutSpinnerComponent, canActivate: [AuthGuard]},
-  {path: 'product-detail', component: ProductDetailComponent, canActivate: [AuthGuard]},
-  {path: 'checkout', component: CheckoutComponent, canActivate: [AuthGuard]},
-  {path: 'checkout-loading', component: CheckoutLoadingComponent, canActivate: [AuthGuard]},
-  {path: 'payment-overview', component: PaymentOverviewComponent, canActivate: [AuthGuard]},
+  {path: 'shopping-cart', component: ShoppingCartComponent},
+  {path: 'favorites', component: FavoritesComponent},
+  {path: 'settings', component: SettingsComponent},
+  {path: 'personal-data', component: PersonalDataComponent},
+  {path: 'search-results', component: SearchResultsComponent},
+  {path: 'change-username', component: ChangeUsernameComponent},
+  {path: 'logout-spinner', component: LogoutSpinnerComponent},
+  {path: 'product-detail', component: ProductDetailComponent},
+  {path: 'checkout', component: CheckoutComponent},
+  {path: 'checkout-loading', component: CheckoutLoadingComponent},
+  {path: 'payment-overview', component: PaymentOverviewComponent},
 ];
 
 @NgModule({

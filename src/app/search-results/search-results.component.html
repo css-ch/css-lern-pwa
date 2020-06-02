@@ -1,30 +1,6 @@
 <app-back-nav pageTitle="Suchergebnisse" pageIcon="search">></app-back-nav>
 <div class="overflow-wrapper">
-  <mat-grid-list cols="2" rowHeight="1:1" *ngIf="innerWidth < 695">
-    <mat-grid-tile *ngFor="let product of productList">
-      <img [src]="product.image" alt="product-image" style="object-fit: cover; height: inherit; width: inherit;"
-           (click)="showProductDetails(product)" matRipple>
-      <mat-grid-tile-footer>
-        <span>{{product.name}}</span>
-        <button mat-button class="make-favorite-button" (click)="toggleFavorite(product)">
-          <mat-icon>favorite_border</mat-icon>
-        </button>
-      </mat-grid-tile-footer>
-    </mat-grid-tile>
-  </mat-grid-list>
-
-  <mat-grid-list cols="4" rowHeight="1:1" *ngIf="innerWidth >= 695">
-    <mat-grid-tile *ngFor="let product of productList">
-      <img [src]="product.image" alt="product-image" style="object-fit: cover; height: inherit; width: inherit;"
-           (click)="showProductDetails(product)" matRipple>
-      <mat-grid-tile-footer>
-        <span>{{product.name}}</span>
-        <button mat-button class="make-favorite-button" (click)="toggleFavorite(product)">
-          <mat-icon>favorite_border</mat-icon>
-        </button>
-      </mat-grid-tile-footer>
-    </mat-grid-tile>
-  </mat-grid-list>
+  <app-product-grid [products]="productList"></app-product-grid>
   <p *ngIf="productList.length <= 0">Ihre Suche hat keine zutreffenden Produkte.</p>
 </div>
 

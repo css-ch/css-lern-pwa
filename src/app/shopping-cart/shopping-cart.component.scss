@@ -1,12 +1,5 @@
-@media screen and (min-width: 750px) {
-  .shopping-cart-wrapper {
-    margin-left: 25%;
-    width: calc(100% - 50%);
-  }
-}
-
 @media screen and (max-width: 749px) {
-  .shopping-cart-wrapper {
+  .container {
     margin-left: 20px;
     width: calc(100% - 40px);
   }
@@ -15,6 +8,12 @@
 .total-item {
   background-image: linear-gradient(#6a1b9a, #12005e);
   color: white;
+  cursor: pointer;
+}
+
+.total-item-unauthorized {
+  background-image: linear-gradient(#b8b8b8, #999999);
+  color: black;
 }
 
 h4 {
