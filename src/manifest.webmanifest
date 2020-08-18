@@ -33,6 +33,12 @@
       "sizes": "192x192"
     },
     {
+       "src": "/assets/img/icons/maskable_icon.png",
+       "type": "image/png",
+       "sizes": "192x192",
+       "purpose": "any maskable"
+    },
+    {
       "src": "/assets/img/icons/icon-256.png",
       "type": "image/png",
       "sizes": "256x256"
@@ -47,8 +53,8 @@
   "scope": ".",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "background_color": "#81b8f7",
-  "theme_color": "#30cde6",
+  "background_color": "#40317E",
+  "theme_color": "#40317E",
   "description": "A PWA testing app",
   "lang": "de-CH",
   "prefer_related_applications": false
