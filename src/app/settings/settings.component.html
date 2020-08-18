@@ -23,10 +23,12 @@
       <p>Zahlungen anzeigen</p>
     </mat-list-item>
     <mat-divider></mat-divider>
-    <mat-list-item role="listitem" (click)="pwaService.addToHomeScreen()">
-      <p>App installieren</p>
-    </mat-list-item>
-    <mat-divider></mat-divider>
+    <div *ngIf="!pwaService.installed">
+      <mat-list-item role="listitem" (click)="pwaService.addToHomeScreen()">
+        <p>App installieren</p>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </div>
   </mat-list>
 </div>
 
