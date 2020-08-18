@@ -1,88 +1,92 @@
 <app-toolbar></app-toolbar>
-<div class="all-products-button container">
-  <app-button (click)="searchAllProducts()" text="Alle Produkte"></app-button>
+<div class="grid-wrapper">
+  <div class="all-products-button">
+    <app-button (click)="searchAllProducts()" text="Alle Produkte"></app-button>
+  </div>
+
+  <div class="search-accordions">
+    <mat-accordion>
+      <mat-expansion-panel [expanded]="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Produktsuche
+          </mat-panel-title>
+          <mat-panel-description>
+            Suche nach einem Produktnamen
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="produktsuche-wrapper">
+          <mat-form-field class="search-input">
+            <input matInput placeholder="Produkt" name="product" [(ngModel)]="searchName" [formControl]="myControl"
+                   [matAutocomplete]="auto">
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+              <mat-option *ngFor="let option of filteredOptions | async" [value]="option.name">
+                {{option.name}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+          <app-button class="search-button" (click)="searchWithName()" text="Suchen"></app-button>
+        </div>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Allgemeine Suche
+          </mat-panel-title>
+          <mat-panel-description>
+            Suche nach Produkten die deinen Kriterien entsprechen
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="allgemeine-suche-wrapper">
+          <mat-form-field class="search-input">
+            <mat-label>Produktart</mat-label>
+            <mat-select [(ngModel)]="type">
+              <mat-option value="Hosen">
+                Hosen
+              </mat-option>
+              <mat-option value="T-Shirts">
+                T-Shirts
+              </mat-option>
+              <mat-option value="Socken">
+                Socken
+              </mat-option>
+              <mat-option value="Pullover">
+                Pullover
+              </mat-option>
+              <mat-option value="Schuhe">
+                Schuhe
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="search-input">
+            <mat-label>Marke</mat-label>
+            <mat-select [(ngModel)]="brand">
+              <mat-option *ngFor="let brand of brandsList | async" [value]="brand.name">
+                {{brand.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="search-input">
+            <mat-label>Farbe</mat-label>
+            <mat-select [(ngModel)]="color">
+              <mat-option value="Gelb">
+                Gelb
+              </mat-option>
+              <mat-option value="Schwarz">
+                Schwarz
+              </mat-option>
+              <mat-option value="Weiss">
+                Weiss
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <app-button class="search-button" (click)="searchWithTypeBrandName()" text="Suchen"></app-button>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
 </div>
-
-<mat-accordion>
-  <mat-expansion-panel [expanded]="true" class="container">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Produktsuche
-      </mat-panel-title>
-      <mat-panel-description>
-        Suche nach einem Produktnamen
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <div class="produktsuche-wrapper">
-      <mat-form-field class="search-input">
-        <input matInput placeholder="Produkt" name="product" [(ngModel)]="searchName" [formControl]="myControl"
-               [matAutocomplete]="auto">
-        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-          <mat-option *ngFor="let option of filteredOptions | async" [value]="option.name">
-            {{option.name}}
-          </mat-option>
-        </mat-autocomplete>
-      </mat-form-field>
-      <app-button class="search-button" (click)="searchWithName()" text="Suchen"></app-button>
-    </div>
-  </mat-expansion-panel>
-
-  <mat-expansion-panel class="container">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Allgemeine Suche
-      </mat-panel-title>
-      <mat-panel-description>
-        Suche nach Produkten die deinen Kriterien entsprechen
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <div class="allgemeine-suche-wrapper">
-      <mat-form-field class="search-input">
-        <mat-label>Produktart</mat-label>
-        <mat-select [(ngModel)]="type">
-          <mat-option value="Hosen">
-            Hosen
-          </mat-option>
-          <mat-option value="T-Shirts">
-            T-Shirts
-          </mat-option>
-          <mat-option value="Socken">
-            Socken
-          </mat-option>
-          <mat-option value="Pullover">
-            Pullover
-          </mat-option>
-          <mat-option value="Schuhe">
-            Schuhe
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-
-      <mat-form-field class="search-input">
-        <mat-label>Marke</mat-label>
-        <mat-select [(ngModel)]="brand">
-          <mat-option *ngFor="let brand of brandsList | async" [value]="brand.name">
-            {{brand.name}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-
-      <mat-form-field class="search-input">
-        <mat-label>Farbe</mat-label>
-        <mat-select [(ngModel)]="color">
-          <mat-option value="Gelb">
-            Gelb
-          </mat-option>
-          <mat-option value="Schwarz">
-            Schwarz
-          </mat-option>
-          <mat-option value="Weiss">
-            Weiss
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-      <app-button class="search-button" (click)="searchWithTypeBrandName()" text="Suchen"></app-button>
-    </div>
-  </mat-expansion-panel>
-</mat-accordion>
 <app-nav></app-nav>

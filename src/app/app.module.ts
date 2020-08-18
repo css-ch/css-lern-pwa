@@ -38,9 +38,8 @@ import {CreditCardDirectivesModule} from 'angular-cc-library';
 import {PaymentOverviewComponent} from './payment-overview/payment-overview.component';
 import {FaIconLibrary, FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {BottomSheetComponent} from './components/bottom-sheet/bottom-sheet.component';
-import {faSignOutAlt} from '@fortawesome/free-solid-svg-icons';
-import { ProductGridComponent } from './components/product-grid/product-grid.component';
-import {faArrowLeft, faSignOutAlt, faArrowRight} from '@fortawesome/free-solid-svg-icons';
+import {ProductGridComponent} from './components/product-grid/product-grid.component';
+import {faArrowLeft, faArrowRight, faSignOutAlt} from '@fortawesome/free-solid-svg-icons';
 
 
 export const firebaseConfig = {
