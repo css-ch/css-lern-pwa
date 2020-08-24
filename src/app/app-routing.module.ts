@@ -8,6 +8,7 @@ import {SuccessComponent} from './success/success.component';
 import {ShoppingCartComponent} from './shopping-cart/shopping-cart.component';
 import {FavoritesComponent} from './favorites/favorites.component';
 import {SettingsComponent} from './settings/settings.component';
+import {AuthGuard} from './_core/auth.guard';
 import {PersonalDataComponent} from './personal-data/personal-data.component';
 import {SearchResultsComponent} from './search-results/search-results.component';
 import {ChangeUsernameComponent} from './change-username/change-username.component';

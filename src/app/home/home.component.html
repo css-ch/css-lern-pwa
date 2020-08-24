@@ -1,24 +1,32 @@
 <app-toolbar></app-toolbar>
-<mat-card class="container product-card">
-  <img mat-card-image [src]="product.image" alt="Product-Image">
-  <mat-card-content>
-    <h2>{{product.name}}</h2>
-    <h3>{{product.price.toFixed(2)}} Fr.</h3>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-flat-button color="primary" class="show-product-button" (click)="showProduct()">Anzeigen</button>
-    <button mat-flat-button color="primary" class="make-favorite-button" (click)="toggleFavorite()"
-            [disabled]="!currentUser">
-      <mat-icon>favorite_border</mat-icon>
-    </button>
-  </mat-card-actions>
-</mat-card>
-<mat-divider></mat-divider>
-<div class="user-info-wrapper" *ngIf="currentUser">
-  <h3>Momentaner Benutzer</h3>
-  <p class="title" *ngIf="currentUser">Hallo {{currentUser.displayName}}</p>
-</div>
-<div class="user-info-wrapper" *ngIf="!currentUser">
-  <h3>Sie sind nicht angemeldet!</h3>
+<div class="grid-wrapper">
+  <mat-card class="product-card">
+    <img mat-card-image [src]="product.image" alt="Product-Image">
+    <mat-card-content>
+      <h2>{{product.name}}</h2>
+      <h3>{{product.price.toFixed(2)}} Fr.</h3>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-flat-button color="primary" class="show-product-button" (click)="showProduct()">Anzeigen</button>
+      <button mat-flat-button color="primary" class="make-favorite-button" (click)="toggleFavorite()"
+              [disabled]="!currentUser">
+        <mat-icon>favorite_border</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+  <div class="newsletter-wrapper">
+    <h3>Nachrichten</h3>
+    <p>
+      This app is still in development. It is not commercial so don't expect your products to be delivered.
+      This app should demonstrate a few PWA mechanics.
+    </p>
+  </div>
+  <div class="user-info-wrapper" *ngIf="currentUser">
+    <h3>Momentaner Benutzer</h3>
+    <p class="title" *ngIf="currentUser">Hallo {{currentUser.displayName}}</p>
+  </div>
+  <div class="user-info-wrapper" *ngIf="!currentUser">
+    <h3>Sie sind nicht angemeldet!</h3>
+  </div>
 </div>
 <app-nav></app-nav>
