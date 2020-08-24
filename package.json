@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start-ssl": "ng serve --ssl --ssl-key /Users/portal_lernende/Documents/git/personal/streetfocus/css-lern-pwa/secrets/localhost.key --ssl-cert /Users/portal_lernende/Documents/git/personal/streetfocus/css-lern-pwa/secrets/localhost.crt --port 4222",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

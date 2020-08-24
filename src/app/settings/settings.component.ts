@@ -3,6 +3,8 @@ import {Router} from '@angular/router';
 import {AuthService} from '../_core/auth.service';
 import {PaymentService} from '../services/payment.service';
 import {PersonalDataService} from '../services/personal.data.service';
+import {SwPush} from '@angular/service-worker';
+import {PushService} from '../services/push.service';
 
 @Component({
   selector: 'app-settings',
@@ -11,10 +13,12 @@ import {PersonalDataService} from '../services/personal.data.service';
 })
 export class SettingsComponent implements OnInit {
 
+  readonly VAPID_PUBLIC_KEY = 'BBxl4HYXkZUsBE-POsCBVA4Xa333VJqQjswZmgxdfaL7h9KTXdETBFTgVz6S92oFi6q9XTWlvwIkzYyiE1eg6Us';
+
   constructor(private router: Router,
               private authService: AuthService,
-              private paymentService: PaymentService,
-              private userService: PersonalDataService) {
+              private swPush: SwPush,
+              private pushService: PushService) {
   }
 
   ngOnInit() {
@@ -38,5 +42,13 @@ export class SettingsComponent implements OnInit {
 
   public showPayments() {
     this.router.navigateByUrl('/payment-overview');
+  }
+
+  subscribeToNotifications() {
+    this.swPush.requestSubscription({
+      serverPublicKey: this.VAPID_PUBLIC_KEY
+    }).then((psObject => {
+     this.pushService.subscribe(psObject);
+    }));
   }
 }
