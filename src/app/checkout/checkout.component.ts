@@ -31,7 +31,6 @@ export class CheckoutComponent implements OnInit {
 
   async checkout() {
     await this.shoppingCartService.emptyCart();
-    console.log(this.personalData.stripeId);
     this.paymentService.pay(this.sum * 100, this.personalData.stripeId).then(() => {
       this.router.navigateByUrl('/checkout-loading');
     });

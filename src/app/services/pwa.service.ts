@@ -21,7 +21,6 @@ export class PwaService {
 
   public addToHomeScreen() {
     if (!this.promptEvent) {
-      console.log('deferredPrompt null');
       return;
     }
 

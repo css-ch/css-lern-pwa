@@ -14,7 +14,6 @@ export class BottomSheetComponent {
   }
 
   openReceipt() {
-    console.log(this.data);
     const receipt = window.open(this.data.receipt_url, '_blank');
     receipt.focus();
   }
