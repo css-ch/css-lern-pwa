@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import {AuthService} from '../_core/auth.service';
 import {PaymentService} from '../services/payment.service';
 import {PersonalDataService} from '../services/personal.data.service';
+import {PwaService} from '../services/pwa.service';
 
 @Component({
   selector: 'app-settings',
@@ -13,8 +14,7 @@ export class SettingsComponent implements OnInit {
 
   constructor(private router: Router,
               private authService: AuthService,
-              private paymentService: PaymentService,
-              private userService: PersonalDataService) {
+              public pwaService: PwaService) {
   }
 
   ngOnInit() {
