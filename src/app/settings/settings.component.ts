@@ -5,6 +5,7 @@ import {PaymentService} from '../services/payment.service';
 import {PersonalDataService} from '../services/personal.data.service';
 import {SwPush} from '@angular/service-worker';
 import {PushService} from '../services/push.service';
+import {PwaService} from '../services/pwa.service';
 
 @Component({
   selector: 'app-settings',
@@ -18,7 +19,8 @@ export class SettingsComponent implements OnInit {
   constructor(private router: Router,
               private authService: AuthService,
               private swPush: SwPush,
-              private pushService: PushService) {
+              private pushService: PushService,
+              public pwaService: PwaService) {
   }
 
   ngOnInit() {

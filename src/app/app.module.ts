@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {APP_INITIALIZER, NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -38,9 +38,11 @@ import {CreditCardDirectivesModule} from 'angular-cc-library';
 import {PaymentOverviewComponent} from './payment-overview/payment-overview.component';
 import {FaIconLibrary, FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {BottomSheetComponent} from './components/bottom-sheet/bottom-sheet.component';
-import { ProductGridComponent } from './components/product-grid/product-grid.component';
-import {faArrowLeft, faSignOutAlt, faArrowRight} from '@fortawesome/free-solid-svg-icons';
+import {ProductGridComponent} from './components/product-grid/product-grid.component';
+import {faArrowLeft, faArrowRight, faSignOutAlt} from '@fortawesome/free-solid-svg-icons';
+import {PwaService} from './services/pwa.service';
 
+const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt();
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyBYlCWINMXHIIpZ94hq4nSAA9WQoFLhXlU',
@@ -96,10 +98,18 @@ export const firebaseConfig = {
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [AuthGuard,
+  providers: [
+    AuthGuard,
+    PwaService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpInterceptorService,
+      multi: true
+    },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializer,
+      deps: [PwaService],
       multi: true
     }
   ],
