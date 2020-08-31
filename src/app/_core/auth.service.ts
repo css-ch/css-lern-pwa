@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
+import {Injectable} from '@angular/core';
+import {AngularFireAuth} from '@angular/fire/auth';
 import {User} from '../models/user';
 import {ToastService} from '../services/toast.service';
 import {Router} from '@angular/router';
@@ -11,18 +11,19 @@ export class AuthService {
 
   constructor(private afAuth: AngularFireAuth,
               private toastService: ToastService,
-              private router: Router) { }
+              private router: Router) {
+  }
 
-  async loginWithEmailAndPassword (user: User) {
-      await this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password).then(() => {
-        this.toastService.createToastMessage('Login erfolgreich');
-        this.router.navigateByUrl('/success');
-      }).catch((e) => {
-        this.toastService.createToastMessage(e.message);
-      });
-    }
+  async loginWithEmailAndPassword(user: User) {
+    await this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password).then(() => {
+      this.toastService.createToastMessage('Login erfolgreich');
+      this.router.navigateByUrl('/success');
+    }).catch((e) => {
+      this.toastService.createToastMessage(e.message);
+    });
+  }
 
-  async createUserWithEmailAndPassword (user: User) {
+  async createUserWithEmailAndPassword(user: User) {
     await this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password).then(res => {
       res.user.updateProfile({
         displayName: user.displayname

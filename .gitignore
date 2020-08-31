@@ -4,6 +4,7 @@
 /dist
 /tmp
 /out-tsc
+/report
 
 # dependencies
 /node_modules
@@ -34,7 +35,12 @@ yarn-error.log
 testem.log
 /typings
 .htaccess
+/secrets
 
 # System Files
 .DS_Store
 Thumbs.db
+/secrets/
+
+# Local Netlify folder
+.netlify
