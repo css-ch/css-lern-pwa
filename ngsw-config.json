@@ -1,6 +1,30 @@
 {
-  "$schema": "./node_modules/@angular/service-worker/config/schema.json",
   "index": "/index.html",
+  "dataGroups": [{
+    "name": "api-performance",
+    "urls": [
+      "/product/**"
+    ],
+    "cacheConfig": {
+      "strategy": "performance",
+      "maxSize": 100,
+      "maxAge": "3d"
+    }
+  },
+    {
+      "name": "api-freshness",
+      "urls": [
+        "/product/random"
+      ],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxSize": 100,
+        "maxAge": "3d",
+        "timeout": "10s"
+      }
+    }
+  ],
+
   "assetGroups": [
     {
       "name": "app",
