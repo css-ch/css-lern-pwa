@@ -1,3 +1,9 @@
+@media screen and (max-width: 320px) {
+  .make-favorite-button {
+    padding: 0;
+  }
+}
+
 @media screen and (max-width: 599px) {
   .grid-wrapper {
     grid-template-rows: auto auto;
@@ -34,6 +40,14 @@
   display: grid;
 }
 
+.action-wrapper {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 75% calc(25% - 5px);
+  grid-gap: 5px;
+  grid-template-areas: "show-product make-favorite";
+}
+
 .newsletter-wrapper {
   text-align: left;
 }
@@ -52,14 +66,12 @@
 }
 
 .show-product-button {
-  width: 75%;
-  display: inline-block;
+  grid-area: show-product;
 }
 
 .make-favorite-button {
-  width: 15%;
-  margin-left: 15px;
-  display: inline-block;
+  grid-area: make-favorite;
+  min-width: auto;
 }
 
 ::ng-deep .mat-card-actions {

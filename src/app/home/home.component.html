@@ -7,11 +7,13 @@
       <h3>{{product.price.toFixed(2)}} Fr.</h3>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-flat-button color="primary" class="show-product-button" (click)="showProduct()">Anzeigen</button>
-      <button mat-flat-button color="primary" class="make-favorite-button" (click)="toggleFavorite()"
-              [disabled]="!currentUser">
-        <mat-icon>favorite_border</mat-icon>
-      </button>
+      <div class="action-wrapper">
+        <button mat-flat-button color="primary" class="show-product-button" (click)="showProduct()">Anzeigen</button>
+        <button mat-flat-button color="primary" class="make-favorite-button" (click)="toggleFavorite()"
+                [disabled]="!currentUser">
+          <mat-icon>favorite_border</mat-icon>
+        </button>
+      </div>
     </mat-card-actions>
   </mat-card>
   <div class="newsletter-wrapper">

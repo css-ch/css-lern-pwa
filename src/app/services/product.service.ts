@@ -29,6 +29,6 @@ export class ProductService {
   }
 
   public async getProductNames() {
-    return await this.http.get<any[]>(environment.apiUrl + '/product/all/names').toPromise();
+    return await this.http.get<string[]>(environment.apiUrl + '/product/all/names').toPromise();
   }
 }

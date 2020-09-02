@@ -23,20 +23,19 @@ export class SearchComponent implements OnInit {
 
   searchName = '';
   brandsList: Observable<Brand[]>;
-  productNames: any[];
-  filteredOptions: Observable<any[]>;
+  productNames: string[];
+  filteredOptions: Observable<string[]>;
   myControl = new FormControl();
   brandsListRef: AngularFireList<Brand>;
 
   constructor(private afDb: AngularFireDatabase,
               private router: Router,
               private productService: ProductService) {
-    this.brandsListRef = afDb.list('/brands');
-    this.brandsList = this.brandsListRef.valueChanges();
   }
 
   async ngOnInit() {
     this.productNames = await this.productService.getProductNames();
+    console.log(this.productNames);
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
       map(value => this._filter(value))
@@ -45,8 +44,7 @@ export class SearchComponent implements OnInit {
 
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
-
-    return this.productNames.filter(option => option.name.toLowerCase().indexOf(filterValue) === 0);
+    return this.productNames.filter(option => option.toLowerCase().indexOf(filterValue) === 0);
   }
 
   async searchWithName() {
